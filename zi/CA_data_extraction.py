@@ -1,13 +1,10 @@
-
-# coding: utf-8
-
 # In[5]:
 
 import requests
 from bs4 import BeautifulSoup
 
 
-# # Main California Data Breach Archive 
+# # Scraping Main California Data Breach ASite
 
 # In[2]:
 
@@ -24,7 +21,7 @@ c = response.content
 soup = BeautifulSoup(c, "lxml")
 
 
-# # Identifying the table on the page and converting it to a CSV
+# # Identifying the table of breaches on the page and converting it to a CSV
 
 # In[40]:
 
@@ -71,15 +68,12 @@ import re
 
 links = soup.tbody.find_all('a')
 
-
-# # Testing with small portion of links
-
 # In[129]:
 
-links_sample = links[:1]
 from pathlib import Path
 
 
+# Downloading all pdfs (if they exist)
 # In[131]:
 
 i = 0
@@ -103,15 +97,6 @@ for link in links:
     except:
         i += 1
         pass
-
-
-
-# In[128]:
-
-
-
-
-# In[ ]:
 
 
 
