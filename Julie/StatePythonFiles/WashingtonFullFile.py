@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 import time
 start_time = time.time()
 
-washington = pd.read_html("http://www.atg.wa.gov/data-breach-notifications", skiprows = 2)[1]
+washington = pd.read_html("http://www.atg.wa.gov/data-breach-notifications'", skiprows = 2)[1]
 
 washington.columns = ['Reported Date', 'Organization Name', 'Date of Breach']
 washington = washington.dropna()
