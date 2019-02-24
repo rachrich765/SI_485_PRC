@@ -1,0 +1,15 @@
+Name of Entity
+Dates of Breach
+Reported Date
+Date(s) of Discovery of Breach
+Date Notice Provided to Consumers
+Data Stolen
+Who's Affected
+Type of Breach
+Individuals Affected
+Location of Breached Information
+Details
+Entity Type
+State Reported
+Link to PDF
+PDF text (ALL) #THIS IS TEMPORARY

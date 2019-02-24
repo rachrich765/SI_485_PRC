@@ -3,6 +3,10 @@ import pandas as pd
 import textract
 import requests
 import os
+import csv
+import re
+from pathlib import Path
+
 
 def basic_beautiful_soup(url):
     
@@ -174,6 +178,79 @@ def update_Washington(most_recent_breach):
     washington['Link to PDF'] = pdf_links
     washington['PDF text (ALL)'] = washington['Link to PDF'].apply(download_parse_file)
 
-    print (washington.head())
+    #print (washington.head())
 
     return washington, 'xyz'
+
+def update_California(most_recent_breach):
+
+    url = 'https://oag.ca.gov/privacy/databreach/list'
+    
+    s = basic_beautiful_soup(url)
+    breach_table = s.find('table')
+    headers = [header.text for header in breach_table.find_all('th')]
+    
+    rows = []
+    for row in breach_table.find_all('tr'):
+        rows.append([val.text.encode('utf8') for val in row.find_all('td')])
+
+    california = pd.DataFrame(columns = headers, data =rows[1:])
+    california = california.rename(index=str, columns={"Organization Name": "Name of Entity", 'Date(s) of Breach': 'Dates of Breach'})
+
+
+    links = s.tbody.find_all('a')
+
+    files = []
+    for link in links:
+        try:
+            resp = requests.get(link.get('href'))
+            c = resp.content
+            soup = BeautifulSoup(c, "lxml")
+            span = soup.find(class_="file")
+            url = span.a.get('href')
+            files.append(download_parse_file(url))
+        except:
+            files.append('')
+    california['PDF text (ALL)'] = files
+    california['State Reported'] = 'California'
+
+
+    return california, "xyz"
+
+def update_Indiana(most_recent_breach):
+    pass
+
+def update_Iowa(most_recent_breach):
+    pass
+
+def update_Delaware(most_recent_breach):
+    pass
+
+def update_NewHampshire(most_recent_breach):
+    pass
+
+def update_NewJersey(most_recent_breach):
+    pass
+
+def update_USDeptHealth(most_recent_breach):
+    url = 'https://ocrportal.hhs.gov/ocr/breach/breach_report.jsf'
+    tables = pd.read_html(url)
+    USDH = tables[1]
+    USDH.drop(['Expand All'], axis=1)
+    USDH = USDH.rename(index=str, columns={"Name of Covered Entity": "Name of Entity", 'State': 'State Reported', 
+        'Covered Entity': "Entity Type", 'Breach Submission Date': 'Reported Date'})
+    states = { 'AK': 'Alaska', 'AL': 'Alabama', 'AR': 'Arkansas', 'AS': 'American Samoa', 'AZ': 'Arizona', 'CA': 'California', 'CO': 'Colorado', 'CT': 'Connecticut', 'DC': 'District of Columbia', 'DE': 'Delaware', 'FL': 'Florida', 'GA': 'Georgia', 'GU': 'Guam', 'HI': 'Hawaii', 'IA': 'Iowa', 'ID': 'Idaho', 'IL': 'Illinois', 'IN': 'Indiana', 'KS': 'Kansas', 'KY': 'Kentucky', 'LA': 'Louisiana', 'MA': 'Massachusetts', 'MD': 'Maryland', 'ME': 'Maine', 'MI': 'Michigan', 'MN': 'Minnesota', 'MO': 'Missouri', 'MP': 'Northern Mariana Islands', 'MS': 'Mississippi', 'MT': 'Montana', 'NA': 'National', 'NC': 'North Carolina', 'ND': 'North Dakota', 'NE': 'Nebraska', 'NH': 'New Hampshire', 'NJ': 'New Jersey', 'NM': 'New Mexico', 'NV': 'Nevada', 'NY': 'New York', 'OH': 'Ohio', 'OK': 'Oklahoma', 'OR': 'Oregon', 'PA': 'Pennsylvania', 'PR': 'Puerto Rico', 'RI': 'Rhode Island', 'SC': 'South Carolina', 'SD': 'South Dakota', 'TN': 'Tennessee', 'TX': 'Texas', 'UT': 'Utah', 'VA': 'Virginia', 'VI': 'Virgin Islands', 'VT': 'Vermont', 'WA': 'Washington', 'WI': 'Wisconsin', 'WV': 'West Virginia', 'WY': 'Wyoming' }
+    USDH['State Reported'] = USDH['State Reported'].apply(lambda x: states[x])
+    return USDH, 'xyz'
+
+def update_Maine(most_recent_breach):
+    pass
+
+def update_Maryland(most_recent_breach):
+    pass
+
+def update_Massachusetts(most_recent_breach):
+    pass
+
+def update_Montana(most_recent_breach):
+    pass

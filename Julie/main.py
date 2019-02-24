@@ -5,7 +5,8 @@ recent = pd.read_csv('recent.csv').set_index('state')
 
 columns = ['Name of Entity', 'Dates of Breach', 'Reported Date',
        'Date(s) of Discovery of Breach', 'Date Notice Provided to Consumers',
-       'Data Stolen', "Who's Affected", 'Details', 'State Reported','Link to PDF',
+       'Data Stolen', "Who's Affected", 'Type of Breach','Individuals Affected',
+       'Location of Breached Information','Details', 'Entity Type','State Reported','Link to PDF',
        'PDF text (ALL)']
 data_breach_chronology = pd.DataFrame(columns=columns)
 
@@ -27,11 +28,33 @@ recent['recent']['Vermont'] = vt_recent
 data_breach_chronology = data_breach_chronology.append(vt_df,ignore_index=True)
 print ('\n', 'Fetched Vermont Data', '\n')
 
-#Vermont
+#Washington
 wa_df, wa_recent = update_Washington(recent['recent']['Washington'])
 recent['recent']['Washington'] = wa_recent
 data_breach_chronology = data_breach_chronology.append(wa_df,ignore_index=True)
 print ('\n', 'Fetched Washington Data', '\n')
+
+#California
+ca_df, ca_recent = update_California(recent['recent']['California'])
+recent['recent']['California'] = ca_recent
+data_breach_chronology = data_breach_chronology.append(ca_df,ignore_index=True)
+print ('\n', 'Fetched California Data', '\n')
+
+#Indiana
+
+#Iowa
+
+#Delaware
+
+#New Hampshire
+
+#New Jersey
+
+#US Department of Health
+usdh_df, usdh_recent = update_USDeptHealth(recent['recent']['Department of Health'])
+recent['recent']['Department of Health'] = usdh_recent
+data_breach_chronology = data_breach_chronology.append(usdh_df,ignore_index=True)
+print ('\n', 'Fetched USDH Data', '\n')
 
 #print (data_breach_chronology.head())
 
