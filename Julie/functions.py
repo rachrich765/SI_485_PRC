@@ -1,11 +1,12 @@
 from bs4 import BeautifulSoup
+from pathlib import Path
 import pandas as pd
+import numpy as np
 import textract
 import requests
 import os
 import csv
 import re
-from pathlib import Path
 
 
 def basic_beautiful_soup(url):
@@ -210,7 +211,7 @@ def update_California(most_recent_breach):
             url = span.a.get('href')
             files.append(download_parse_file(url))
         except:
-            files.append('')
+            files.append(' ')
     california['PDF text (ALL)'] = files
     california['State Reported'] = 'California'
 
@@ -244,7 +245,114 @@ def update_USDeptHealth(most_recent_breach):
     return USDH, 'xyz'
 
 def update_Maine(most_recent_breach):
-    pass
+    url = 'https://www.maine.gov/ag/consumer/identity_theft/' #URL of Main webpage
+    s = basic_beautiful_soup(url)
+
+    year_url = [] #creates URL string
+    for x in s('ul', {'class':"plain"}): #iterates through the neccisary HTML to get needed href
+        for item in x('a'):
+#       print(item)   
+            if item.get('href') != 'https://appengine.egov.com/apps/nics/Maine/AGReportingForm':
+                year_url.append(item.get('href')) #retrieves and asisngs needed content (str) to year_url varialbe
+    
+    core_year_url = 'https://www.maine.gov/ag'
+    current_breaches = core_year_url + year_url[0][5:]
+    archived_breaches = core_year_url + year_url[1][5:]
+    
+    
+    resp = requests.get(archived_breaches)
+    output = open('Maine.xls', 'wb')
+    output.write(resp.content)
+    output.close()
+
+    df = pd.read_excel('Maine.xls') 
+    os.remove("Maine.xls")
+
+    headers = df.iloc[0] #takes first row (needed hearders)
+    maine_arch = pd.DataFrame(df.values[1:], columns=headers) #creates new pd data frame with the proper headers and fills data
+    maine_arch = maine_arch.dropna(how = 'all')
+    maine_arch = maine_arch.drop(columns = ['Company Contact Information','Attorney (If Represented)'])
+
+    maine_arch = maine_arch.rename(index=str, columns={"Company Whose      Data Was Breached": "Name of Entity",
+        'Date of Breach':'Dates of Breach',
+        'Date of Notification':'Date Notice Provided to Consumers', 'Type of Information':'Data Stolen', 
+        'Number of Maine Residents Affected':'Individuals Affected'})
+
+    maine_arch['Individuals Affected'] = maine_arch['Individuals Affected'].apply(lambda x: str(x) + '(in Maine')
+
+    resp = requests.get(current_breaches)
+    output = open('Maine.xls', 'wb')
+    output.write(resp.content)
+    output.close()
+
+    maine_current = pd.read_excel('Maine.xls') 
+    os.remove("Maine.xls")
+    print (maine_current.columns)
+    maine_current['Entity Address'] = maine_current['01_03_02_Street Address'] + maine_current['01_03_03_City']+ maine_current['01_03_04_State'] + maine_current['01_03_05_Zip Code']
+    maine_current['01_04_01_Educational'] = maine_current['01_04_01_Educational'].apply(lambda x: 'Educational ' if x == True else '')
+    maine_current['01_04_02_Financial Services (if reporting to the Department of Professional and Financial Services, this form is not required. 10 M.R.S.A. §1348(5))'] = maine_current['01_04_02_Financial Services (if reporting to the Department of Professional and Financial Services, this form is not required. 10 M.R.S.A. §1348(5))'].apply(lambda x: 'Financial Services ' if x == True else '')
+    maine_current['01_04_03_Governmental Entity in Maine'] = maine_current['01_04_03_Governmental Entity in Maine'].apply(lambda x: 'Governmental Entity in Maine ' if x == True else '')
+    maine_current['01_04_04_Other Governmental Entity'] = maine_current['01_04_04_Other Governmental Entity'].apply(lambda x: 'Other Governmental Entity ' if x == True else '')
+    maine_current['01_04_05_Health Care'] = maine_current['01_04_05_Health Care'].apply(lambda x: 'Health Care ' if x == True else '')
+    maine_current['01_04_06_Other Commercial'] = maine_current['01_04_06_Other Commercial'].apply(lambda x: 'Other Commercial ' if x == True else '')
+    maine_current['01_04_07_Not-for-Profit'] = maine_current['01_04_07_Not-for-Profit'].apply(lambda x: 'Not-for-Profit ' if x == True else '')
+    maine_current['01_04_08_POS Vendor'] = maine_current['01_04_08_POS Vendor'].apply(lambda x: 'POS Vendor ' if x == True else '')
+    
+    maine_current['Entity Type'] = maine_current['01_04_01_Educational'] + maine_current['01_04_02_Financial Services (if reporting to the Department of Professional and Financial Services, this form is not required. 10 M.R.S.A. §1348(5))'] + maine_current['01_04_03_Governmental Entity in Maine'] + maine_current['01_04_05_Health Care'] + maine_current['01_04_06_Other Commercial'] + maine_current['01_04_07_Not-for-Profit'] + maine_current['01_04_08_POS Vendor']
+    
+    maine_current['Individuals Affected'] = maine_current['02_01_01_Total number of persons affected (including Maine residents)'] + '(' + maine_current['02_01_02_Total number of Maine residents affected'] + ' in Maine)'
+
+    maine_current['02_02_01_Loss or theft of device or media (e.g., computer, laptop, external hard drive, thumb drive, CD, tape)'] = maine_current['02_02_01_Loss or theft of device or media (e.g., computer, laptop, external hard drive, thumb drive, CD, tape)'].apply(lambda x: 'Loss or theft of device or media (e.g., computer, laptop, external hard drive, thumb drive, CD, tape) ' if x == True else '')
+    maine_current['02_02_02_Internal system breach'] = maine_current['02_02_02_Internal system breach'].apply(lambda x: 'Internal system breach ' if x == True else '') 
+    maine_current['02_02_03_Insider wrongdoing'] = maine_current['02_02_03_Insider wrongdoing'].apply(lambda x: 'Insider wrongdoing' if x == True else '')
+    maine_current['02_02_04_External system breach (e.g., hacking)'] = maine_current['02_02_04_External system breach (e.g., hacking)'].apply(lambda x: 'External system breach (e.g., hacking)' if x == True else '')
+    maine_current['02_02_05_Inadvertent disclosure'] =  maine_current['02_02_05_Inadvertent disclosure'].apply(lambda x: 'Inadvertent disclosure' if x == True else '')
+    #maine_current['02_02_06_Other'] = maine_current['02_02_06_Other']
+    maine_current['02_02_07_If other, specify'] = maine_current['02_02_07_If other, specify'].apply(lambda x: '' if x == None else x)
+
+    maine_current['Cause of Breach'] = maine_current['02_02_01_Loss or theft of device or media (e.g., computer, laptop, external hard drive, thumb drive, CD, tape)']+ maine_current['02_02_02_Internal system breach'] + maine_current['02_02_03_Insider wrongdoing'] + maine_current['02_02_04_External system breach (e.g., hacking)']+maine_current['02_02_04_External system breach (e.g., hacking)'] + maine_current['02_02_05_Inadvertent disclosure'] + maine_current['02_02_07_If other, specify']
+    
+    maine_current['02_03_01_Social Security Number'] = maine_current['02_03_01_Social Security Number'].apply(lambda x: 'Social Security Number ' if x == True else '')
+    maine_current["02_03_02_Driver's license number or non-driver identification card number"] = maine_current["02_03_02_Driver's license number or non-driver identification card number"].apply(lambda x: "Driver's license number or non-driver identification card number " if x == True else '')
+    maine_current['02_03_03_Financial account number or credit or debit card number, in combination with the security code, access code,  password, or PIN for the account'] = maine_current['02_03_03_Financial account number or credit or debit card number, in combination with the security code, access code,  password, or PIN for the account'].apply(lambda x: 'Financial account number or credit or debit card number, in combination with the security code, access code,  password, or PIN for the account ' if x == True else '')
+
+    maine_current['Data Stolen'] = maine_current['02_03_01_Social Security Number'] + maine_current["02_03_02_Driver's license number or non-driver identification card number"]+maine_current['02_03_03_Financial account number or credit or debit card number, in combination with the security code, access code,  password, or PIN for the account']
+
+
+    maine_current = maine_current.drop(columns = ['Start Date','01_03_02_Street Address','01_03_03_City', '01_03_04_State', '01_03_05_Zip Code',
+       '01_04_01_Educational','01_04_02_Financial Services (if reporting to the Department of Professional and Financial Services, this form is not required. 10 M.R.S.A. §1348(5))',
+        '01_04_03_Governmental Entity in Maine','01_04_04_Other Governmental Entity','01_04_05_Health Care','01_04_06_Other Commercial','01_04_07_Not-for-Profit','01_04_08_POS Vendor',
+        '01_05_01_Name', '01_05_02_Title',
+        '01_05_03_Firm name (if different than entity name)',
+        '01_05_04_Telephone Number', '01_05_05_Email Address',
+        '01_05_06_Relationship to entity whose information was compromised',
+        '02_01_01_Total number of persons affected (including Maine residents)',
+        '02_01_02_Total number of Maine residents affected',
+        '02_01_03_If the number of Maine residents exceeds 1,000, have the consumer reporting agencies been notified?','02_02_01_Loss or theft of device or media (e.g., computer, laptop, external hard drive, thumb drive, CD, tape)',
+        '02_02_02_Internal system breach', '02_02_03_Insider wrongdoing',
+        '02_02_04_External system breach (e.g., hacking)',
+        '02_02_05_Inadvertent disclosure', '02_02_06_Other',
+        '02_02_07_If other, specify','03_01_01_Written', '03_01_02_Electronic', '03_01_03_Telephone',
+        '03_01_04_Substitute notice','03_01_06_Attach a copy of the template of the notice to affected Maine residents',
+        '03_02_01_Were identify theft protection services offered?',
+        '03_02_02_If yes, for what duration?',
+        '03_02_03_If yes, by what provider?',
+        '03_02_04_If yes, provide a brief description of the service.',
+        '02_03_01_Social Security Number',
+       "02_03_02_Driver's license number or non-driver identification card number",
+       '02_03_03_Financial account number or credit or debit card number, in combination with the security code, access code,  password, or PIN for the account',
+       '03_01_07_List dates of any previous (within 12 months) breach notifications'])
+
+    maine_current = maine_current.rename(index=str, columns={'01_03_01_Entity Name':'Name of Entity',
+        '02_01_04_Date(s) Breach Occurred':'Dates of Breach', '02_01_05_Date Breach Discovered':'Date(s) of Discovery of Breach', 
+        '03_01_05_Date(s) of consumer notification':'Date Notice Provided to Consumers'})
+
+
+    #print ('NEED TO HANDLE MAINE CURRENT AND merge')
+    #print (maine_current.head())
+    maine = pd.concat([maine_current, maine_arch], ignore_index = True)
+    
+    return maine, 'xyz'
 
 def update_Maryland(most_recent_breach):
     pass
