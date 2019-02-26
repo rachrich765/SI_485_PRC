@@ -1,9 +1,12 @@
+from pandas.io.json import json_normalize
 from bs4 import BeautifulSoup
 from pathlib import Path
 import pandas as pd
 import numpy as np
 import textract
 import requests
+import datetime
+import json
 import os
 import csv
 import re
@@ -83,9 +86,10 @@ def update_Oregon(most_recent_breach):
     more_info = more_info.rename(index=str, columns={"Organization Name": "Organization"})
     #more_info.columns = ['Date(s) of Discovery of Breach', 'Notice Provided to Consumers' ,'Organization']
     
-    df = pd.merge(oregon, more_info)
+    df = pd.merge(oregon, more_info, how = 'left', on = 'Organization')
     df = df.rename(index=str, columns={"Organization": "Name of Entity ", 'Notice Provided to Consumers': 'Date Notice Provided to Consumers'})
     df['State Reported'] = 'Oregon'
+  
     return df, most_recent_breach
 
 
@@ -222,10 +226,77 @@ def update_Indiana(most_recent_breach):
     pass
 
 def update_Iowa(most_recent_breach):
-    pass
+    base_url = 'https://www.iowaattorneygeneral.gov'
+    first_year = 2011
+    last_year = datetime.datetime.today().year
+    columns = ['Name of Entity', 'Reported Date']
+    iowa = pd.DataFrame(columns=columns)
+    for year in range(first_year,last_year+1):
+        if (year != 2017 and year != 2019):
+            url = 'https://www.iowaattorneygeneral.gov/for-consumers/security-breach-notifications/{}-security-breach-notifications/'.format(year)
+        else:
+            url = 'https://www.iowaattorneygeneral.gov/for-consumers/security-breach-notifications/{}'.format(year)
+        temp = pd.read_html(url)[0]
+        temp = temp.rename(columns=temp.iloc[0])
+        temp = temp.drop(temp.index[0])
+        s = basic_beautiful_soup(url)
+        links = s.find('table')('a')
+        pdfs = []
+        links_pdfs = []
+        for item in links:
+            if item.get('href'):
+                url = base_url + item.get('href')
+                links_pdfs.append(url)
+                pdfs.append(download_parse_file(url))
+ 
+        #breach_table = s.find('table')
+        #headers = [header.text for header in breach_table.find_all('h4')]
+        
+        temp['PDF text (ALL)'] = pdfs
+        temp['Link to PDF'] = links_pdfs
+        
+
+        #print (temp.columns)
+        if 'YEAR REPORTED' in temp.columns:
+            temp['YEAR REPORTED'] = year
+            temp = temp.rename(columns = {'YEAR REPORTED':'Reported Date','ORGANIZATION NAME':'Name of Entity'})
+        else: 
+            temp = temp.rename(columns = {'DATE REPORTED':'Reported Date','ORGANIZATION NAME':'Name of Entity'})
+        iowa = iowa.append(temp,ignore_index=True)
+    return iowa, 'xyz'
 
 def update_Delaware(most_recent_breach):
-    pass
+
+    url = 'https://attorneygeneral.delaware.gov/fraud/cpu/securitybreachnotification/database/'
+    delaware = pd.read_html(url)[0]
+    s = basic_beautiful_soup(url)
+
+    links = s.tbody.find_all('a')
+
+    #i = 0
+    pdfs = []
+    for link in links:
+        try:
+            #print (link.get('href'))
+            pdfs.append(download_parse_file(link.get('href')))
+            #i+=1
+    
+        except:
+            #i+=1
+            pass
+    
+    delaware = delaware.rename(index=str, columns={'Organization Name': 'Name of Entity', 'Date(s) of Breach':'Dates of Breach',
+        'Number of Potentially Affected Delaware Residents': 'Individuals Affected'})
+    delaware = delaware.drop(columns = ["Sample of Notice"])
+    
+    delaware['Individuals Affected'] = delaware['Individuals Affected'].apply(lambda x: str(x)+'(in Delaware)')
+    delaware['PDF text (ALL)'] = pdfs
+
+    
+    print(len(delaware))
+
+    return delaware, 'xyz'
+
 
 def update_NewHampshire(most_recent_breach):
     pass
@@ -234,6 +305,7 @@ def update_NewJersey(most_recent_breach):
     pass
 
 def update_USDeptHealth(most_recent_breach):
+    print ('INCOMPLETE')
     url = 'https://ocrportal.hhs.gov/ocr/breach/breach_report.jsf'
     tables = pd.read_html(url)
     USDH = tables[1]
@@ -242,6 +314,7 @@ def update_USDeptHealth(most_recent_breach):
         'Covered Entity': "Entity Type", 'Breach Submission Date': 'Reported Date'})
     states = { 'AK': 'Alaska', 'AL': 'Alabama', 'AR': 'Arkansas', 'AS': 'American Samoa', 'AZ': 'Arizona', 'CA': 'California', 'CO': 'Colorado', 'CT': 'Connecticut', 'DC': 'District of Columbia', 'DE': 'Delaware', 'FL': 'Florida', 'GA': 'Georgia', 'GU': 'Guam', 'HI': 'Hawaii', 'IA': 'Iowa', 'ID': 'Idaho', 'IL': 'Illinois', 'IN': 'Indiana', 'KS': 'Kansas', 'KY': 'Kentucky', 'LA': 'Louisiana', 'MA': 'Massachusetts', 'MD': 'Maryland', 'ME': 'Maine', 'MI': 'Michigan', 'MN': 'Minnesota', 'MO': 'Missouri', 'MP': 'Northern Mariana Islands', 'MS': 'Mississippi', 'MT': 'Montana', 'NA': 'National', 'NC': 'North Carolina', 'ND': 'North Dakota', 'NE': 'Nebraska', 'NH': 'New Hampshire', 'NJ': 'New Jersey', 'NM': 'New Mexico', 'NV': 'Nevada', 'NY': 'New York', 'OH': 'Ohio', 'OK': 'Oklahoma', 'OR': 'Oregon', 'PA': 'Pennsylvania', 'PR': 'Puerto Rico', 'RI': 'Rhode Island', 'SC': 'South Carolina', 'SD': 'South Dakota', 'TN': 'Tennessee', 'TX': 'Texas', 'UT': 'Utah', 'VA': 'Virginia', 'VI': 'Virgin Islands', 'VT': 'Vermont', 'WA': 'Washington', 'WI': 'Wisconsin', 'WV': 'West Virginia', 'WY': 'Wyoming' }
     USDH['State Reported'] = USDH['State Reported'].apply(lambda x: states[x])
+    print (len(USDH))
     return USDH, 'xyz'
 
 def update_Maine(most_recent_breach):
@@ -355,7 +428,13 @@ def update_Maine(most_recent_breach):
     return maine, 'xyz'
 
 def update_Maryland(most_recent_breach):
-    pass
+    
+    year = 2015
+    string = "&p_Year=" +str(year) 
+    base_url = "http://www.marylandattorneygeneral.gov/_layouts/15/inplview.aspx?List=%7B04EBF6F4-B351-492F-B96D-167E2DE39C85%7D&View=%7BAC628F51-0774-4B71-A77E-77D6B9909F7E%7D&ViewCount=4&IsXslView=TRUE&IsCSR=TRUE&ListViewPageUrl=http%3A%2F%2Fwww.marylandattorneygeneral.gov%2FPages%2FIdentityTheft%2Fbreachnotices.aspx&p_Date_x0020_Received=20161219%2005%3a00%3a00&p_ID=4199&GroupString=%3b%232016%3b%23&IsGroupRender=TRUE&WebPartID={AC628F51-0774-4B71-A77E-77D6B9909F7E}"
+    url = base_url + string
+
+    return maryland, 'xyz'
 
 def update_Massachusetts(most_recent_breach):
     pass

@@ -47,10 +47,10 @@ print ('\n', 'Fetched California Data', '\n')
 #print ('\n', 'Fetched Indiana Data', '\n')
 
 #Iowa
-#ia_df, ia_recent = update_Iowa(recent['recent']['Iowa'])
-#recent['recent']['Iowa'] = ia_recent
-#data_breach_chronology = data_breach_chronology.append(ia_df,ignore_index=True)
-#print ('\n', 'Fetched Iowa Data', '\n')
+ia_df, ia_recent = update_Iowa(recent['recent']['Iowa'])
+recent['recent']['Iowa'] = ia_recent
+data_breach_chronology = data_breach_chronology.append(ia_df,ignore_index=True)
+print ('\n', 'Fetched Iowa Data', '\n')
 
 #Delaware
 #de_df, de_recent = update_Delaware(recent['recent']['Delaware'])
@@ -71,10 +71,10 @@ print ('\n', 'Fetched California Data', '\n')
 #print ('\n', 'Fetched New Jersey Data', '\n')
 
 #US Department of Health
-usdh_df, usdh_recent = update_USDeptHealth(recent['recent']['Department of Health'])
-recent['recent']['Department of Health'] = usdh_recent
-data_breach_chronology = data_breach_chronology.append(usdh_df,ignore_index=True)
-print ('\n', 'Fetched USDH Data', '\n')
+#usdh_df, usdh_recent = update_USDeptHealth(recent['recent']['Department of Health'])
+#recent['recent']['Department of Health'] = usdh_recent
+#data_breach_chronology = data_breach_chronology.append(usdh_df,ignore_index=True)
+#print ('\n', 'Fetched USDH Data', '\n')
 
 
 #Maine
