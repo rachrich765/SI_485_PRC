@@ -1,15 +1,15 @@
-Name of Entity
-Dates of Breach
-Reported Date
-Date(s) of Discovery of Breach
-Date Notice Provided to Consumers
-Data Stolen
+Name of Entity #company
+Dates of Breach #date
+Reported Date #date
+Date(s) of Discovery of Breach #date
+Date Notice Provided to Consumers #date
+Data Stolen #email, phone, social security, etc.
 Who's Affected
-Type of Breach
-Individuals Affected
-Location of Breached Information
-Details
-Entity Type
-State Reported
+Type of Breach #source
+Individuals Affected #number of people
+Location of Breached Information #?
+Details #?
+Entity Type #company type
+State Reported #state
 Link to PDF
 PDF text (ALL) #THIS IS TEMPORARY
