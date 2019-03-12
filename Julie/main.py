@@ -41,10 +41,10 @@ data_breach_chronology = data_breach_chronology.append(ca_df,ignore_index=True)
 print ('\n', 'Fetched California Data', '\n')
 
 #Indiana
-#in_df, in_recent = update_Indiana(recent['recent']['Indiana'])
-#recent['recent']['Indiana'] = in_recent
-#data_breach_chronology = data_breach_chronology.append(in_df,ignore_index=True)
-#print ('\n', 'Fetched Indiana Data', '\n')
+in_df, in_recent = update_Indiana(recent['recent']['Indiana'])
+recent['recent']['Indiana'] = in_recent
+data_breach_chronology = data_breach_chronology.append(in_df,ignore_index=True)
+print ('\n', 'Fetched Indiana Data', '\n')
 
 #Iowa
 ia_df, ia_recent = update_Iowa(recent['recent']['Iowa'])
@@ -53,10 +53,10 @@ data_breach_chronology = data_breach_chronology.append(ia_df,ignore_index=True)
 print ('\n', 'Fetched Iowa Data', '\n')
 
 #Delaware
-#de_df, de_recent = update_Delaware(recent['recent']['Delaware'])
-#recent['recent']['Delaware'] = de_recent
-#data_breach_chronology = data_breach_chronology.append(de_df,ignore_index=True)
-#print ('\n', 'Fetched Delaware Data', '\n')
+de_df, de_recent = update_Delaware(recent['recent']['Delaware'])
+recent['recent']['Delaware'] = de_recent
+data_breach_chronology = data_breach_chronology.append(de_df,ignore_index=True)
+print ('\n', 'Fetched Delaware Data', '\n')
 
 #New Hampshire
 #nh_df, nh_recent = update_NewHampshire(recent['recent']['New Hampshire'])

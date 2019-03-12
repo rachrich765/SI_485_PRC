@@ -202,10 +202,10 @@ def update_California(most_recent_breach):
     california = pd.DataFrame(columns = headers, data =rows[1:])
     california = california.rename(index=str, columns={"Organization Name": "Name of Entity", 'Date(s) of Breach': 'Dates of Breach'})
 
-
     links = s.tbody.find_all('a')
-
+    print (len(california))
     files = []
+    x = 0
     for link in links:
         try:
             resp = requests.get(link.get('href'))
@@ -215,7 +215,9 @@ def update_California(most_recent_breach):
             url = span.a.get('href')
             files.append(download_parse_file(url))
         except:
-            files.append(' ')
+            files.append('')
+        x += 1
+        print (x)
     california['PDF text (ALL)'] = files
     california['State Reported'] = 'California'
 
@@ -223,7 +225,86 @@ def update_California(most_recent_breach):
     return california, "xyz"
 
 def update_Indiana(most_recent_breach):
-    pass
+    
+    url = 'https://www.in.gov/attorneygeneral/2874.htm'
+    url_front = 'https://www.in.gov/'
+    #columns = ['Name of Entity','Date Notice Provided to Consumers','Dates of Breach','Number of IN Residents Affected','Number of Consumers Affected Nationwide','Disposition','Status']
+    columns = ['Name of Entity', 'Date Notice Provided to Consumers',
+       'Dates of Breach', 'Number of IN Residents Affected',
+       'Number of Consumers Affected Nationwide', 'Status']
+    indiana = pd.DataFrame(columns=columns)
+
+    s = basic_beautiful_soup(url)
+    breach_links = s.find('p', relativehref='[ioID]8026AD70E4164E4E9F9FE8FA5553BA5C/2016_04_01_ITU_Breach(1).pdf')('a')
+    full_breach_links = []
+    for link in breach_links:
+        full_breach_links.append(url_front + link.get('href'))
+
+    for url in full_breach_links[2:]:
+        if '.pdf' in url:
+            response = requests.get(url)
+            my_raw_data = response.content
+            with open("new_pdf.pdf", 'wb') as my_data:
+                my_data.write(my_raw_data)
+                my_data.close()
+            fileData = ("new_pdf.pdf", open("new_pdf.pdf", 'rb')) #"rb" stands for "read bytes"
+            files = {'f': fileData} 
+            apiKey = "6wb10txsz9f9" 
+            fileExt = "csv" #format/file extension of final document
+            postUrl = "https://pdftables.com/api?key={0}&format={1}".format(apiKey, fileExt)
+            response = requests.post(postUrl, files=files)
+            response.raise_for_status() # ensure we notice bad responses
+            downloadDir = "example.csv" #directory where you want your file downloaded to 
+
+            with open(downloadDir, "wb") as f:
+                f.write(response.content) #write data to csv
+            temp = pd.read_csv(downloadDir)
+            if len(temp.columns) == 6:
+                temp.columns = ['Name of Entity','Date Notice Provided to Consumers','Dates of Breach','Number of IN Residents Affected','Number of Consumers Affected Nationwide','Disposition']
+            else:
+                temp.columns = ['Name of Entity','Date Notice Provided to Consumers','Dates of Breach','Number of IN Residents Affected','Disposition']
+
+            temp = temp.drop(temp.index[0])
+            indiana = indiana.append(temp, ignore_index = True)
+
+            os.remove("new_pdf.pdf")
+            os.remove("example.csv")
+        else:
+            resp = requests.get(url)
+            output = open('in_one_year.xls', 'wb')
+            output.write(resp.content)
+            output.close()
+
+            temp = pd.read_excel('in_one_year.xls') 
+            os.remove('in_one_year.xls')
+            #print (temp.columns)
+            if 'Respondent' in temp.columns:
+                #print('x')
+                temp_new = temp.rename(index=str, columns={'Respondent':'Name of Entity',  
+                    'Notification Sent':'Date Notice Provided to Consumers',
+                    'Breach Occurred':'Dates of Breach',
+                    'IN Affected':'Number of IN Residents Affected',
+                    'Total Affected':'Number of Consumers Affected Nationwide'})
+                
+                indiana = indiana.append(temp_new, ignore_index = True)
+                #print (temp.columns)
+            elif "Name of Company or Organization " in temp.columns:
+                #print('y')
+                temp_new = temp.rename(index=str, columns={'Name of Company or Organization ':'Name of Entity', 
+                    'Date of Notification ':'Date Notice Provided to Consumers', 
+                    'Date of Breach ':'Dates of Breach',
+                    'Number of Indiana Residents Affected ':'Number of IN Residents Affected',
+                    'Number of Consumers Affected Nationwide ':'Number of Consumers Affected Nationwide',
+                    'Disposition':'Status'})
+               
+                indiana = indiana.append(temp_new, ignore_index = True)#in temp.columns:
+    
+    indiana['Number of Consumers Affected Nationwide'] = indiana['Number of Consumers Affected Nationwide'].apply(lambda x: 'Unknown' if pd.isnull(x) else str(x))
+    indiana['Number of IN Residents Affected'] = indiana['Number of IN Residents Affected'].apply(lambda x: 'Unknown' if pd.isnull(x) else str(x))
+    indiana['Individuals Affected'] = indiana['Number of Consumers Affected Nationwide']+' ('+ indiana['Number of IN Residents Affected'] +' in Indiana)'
+    indiana = indiana.drop(columns = ['Number of Consumers Affected Nationwide','Number of IN Residents Affected','Status', 'Unnamed: 1'])
+    
+    return indiana, 'xyz'
 
 def update_Iowa(most_recent_breach):
     base_url = 'https://www.iowaattorneygeneral.gov'
@@ -239,6 +320,7 @@ def update_Iowa(most_recent_breach):
         temp = pd.read_html(url)[0]
         temp = temp.rename(columns=temp.iloc[0])
         temp = temp.drop(temp.index[0])
+        temp = temp.dropna(how = 'all')
         s = basic_beautiful_soup(url)
         links = s.find('table')('a')
         pdfs = []
@@ -248,10 +330,12 @@ def update_Iowa(most_recent_breach):
                 url = base_url + item.get('href')
                 links_pdfs.append(url)
                 pdfs.append(download_parse_file(url))
+            else:
+                pdfs.append('')
  
         #breach_table = s.find('table')
         #headers = [header.text for header in breach_table.find_all('h4')]
-        
+ 
         temp['PDF text (ALL)'] = pdfs
         temp['Link to PDF'] = links_pdfs
         
@@ -263,6 +347,7 @@ def update_Iowa(most_recent_breach):
         else: 
             temp = temp.rename(columns = {'DATE REPORTED':'Reported Date','ORGANIZATION NAME':'Name of Entity'})
         iowa = iowa.append(temp,ignore_index=True)
+        iowa['State Reported'] = 'Iowa'
     return iowa, 'xyz'
 
 def update_Delaware(most_recent_breach):
@@ -291,9 +376,8 @@ def update_Delaware(most_recent_breach):
     
     delaware['Individuals Affected'] = delaware['Individuals Affected'].apply(lambda x: str(x)+'(in Delaware)')
     delaware['PDF text (ALL)'] = pdfs
+    delaware['State Reported'] = 'Delaware'
 
-    
-    print(len(delaware))
 
     return delaware, 'xyz'
 
@@ -344,7 +428,7 @@ def update_Maine(most_recent_breach):
     headers = df.iloc[0] #takes first row (needed hearders)
     maine_arch = pd.DataFrame(df.values[1:], columns=headers) #creates new pd data frame with the proper headers and fills data
     maine_arch = maine_arch.dropna(how = 'all')
-    maine_arch = maine_arch.drop(columns = ['Company Contact Information','Attorney (If Represented)'])
+    maine_arch = maine_arch.drop(columns = ['Company Contact Information','Attorney                   (If Represented)'])
 
     maine_arch = maine_arch.rename(index=str, columns={"Company Whose      Data Was Breached": "Name of Entity",
         'Date of Breach':'Dates of Breach',
@@ -360,7 +444,7 @@ def update_Maine(most_recent_breach):
 
     maine_current = pd.read_excel('Maine.xls') 
     os.remove("Maine.xls")
-    print (maine_current.columns)
+    #print (maine_current.columns)
     maine_current['Entity Address'] = maine_current['01_03_02_Street Address'] + maine_current['01_03_03_City']+ maine_current['01_03_04_State'] + maine_current['01_03_05_Zip Code']
     maine_current['01_04_01_Educational'] = maine_current['01_04_01_Educational'].apply(lambda x: 'Educational ' if x == True else '')
     maine_current['01_04_02_Financial Services (if reporting to the Department of Professional and Financial Services, this form is not required. 10 M.R.S.A. §1348(5))'] = maine_current['01_04_02_Financial Services (if reporting to the Department of Professional and Financial Services, this form is not required. 10 M.R.S.A. §1348(5))'].apply(lambda x: 'Financial Services ' if x == True else '')
@@ -424,16 +508,58 @@ def update_Maine(most_recent_breach):
     #print ('NEED TO HANDLE MAINE CURRENT AND merge')
     #print (maine_current.head())
     maine = pd.concat([maine_current, maine_arch], ignore_index = True)
+    maine['State Reported'] = 'Maine'
     
     return maine, 'xyz'
 
 def update_Maryland(most_recent_breach):
-    
-    year = 2015
+    murl = 'http://www.marylandattorneygeneral.gov/Pages/IdentityTheft/breachnotices.aspx'
+    s = basic_beautiful_soup(murl)
+    years = range(2015,datetime.datetime.now().year)
+    counts = {}
+    for x in years:
+        soup = str(s('tbody',{'groupstring':'%3B%23{}%3B%23'.format(str(x))}))
+        counts[x] = int(re.findall(r'\(([0-9]*?)\)',str(soup))[0])
+    print (counts)
+    year = 2016#2015
     string = "&p_Year=" +str(year) 
     base_url = "http://www.marylandattorneygeneral.gov/_layouts/15/inplview.aspx?List=%7B04EBF6F4-B351-492F-B96D-167E2DE39C85%7D&View=%7BAC628F51-0774-4B71-A77E-77D6B9909F7E%7D&ViewCount=4&IsXslView=TRUE&IsCSR=TRUE&ListViewPageUrl=http%3A%2F%2Fwww.marylandattorneygeneral.gov%2FPages%2FIdentityTheft%2Fbreachnotices.aspx&p_Date_x0020_Received=20161219%2005%3a00%3a00&p_ID=4199&GroupString=%3b%232016%3b%23&IsGroupRender=TRUE&WebPartID={AC628F51-0774-4B71-A77E-77D6B9909F7E}"
     url = base_url + string
 
+    rows = []
+    page_start = 1
+    page_start = 1
+    while year < 2019:
+        string = "&p_Year=" +str(year) 
+        base_url = "http://www.marylandattorneygeneral.gov/_layouts/15/inplview.aspx?List=%7B04EBF6F4-B351-492F-B96D-167E2DE39C85%7D&View=%7BAC628F51-0774-4B71-A77E-77D6B9909F7E%7D&ViewCount=4&IsXslView=TRUE&IsCSR=TRUE&ListViewPageUrl=http%3A%2F%2Fwww.marylandattorneygeneral.gov%2FPages%2FIdentityTheft%2Fbreachnotices.aspx&p_Date_x0020_Received={}1219%2005%3a00%3a00&p_ID=4199&GroupString=%3b%23{}%3b%23&IsGroupRender=TRUE&WebPartID={AC628F51-0774-4B71-A77E-77D6B9909F7E}".format(year,year)
+        url = base_url + string
+        #stop =  counts[year]//30 + 1
+        #print(stop)
+        if counts[year] > page_start:
+            result = requests.post(url, headers={'referer': "http://www.marylandattorneygeneral.gov/Pages/IdentityTheft/breachnotices.aspx"})
+#         print(result.text)
+            data = json.loads(result.text)
+            for x in data['Row']:
+                rows.append({
+                    'case_title': x['Case_x0020_Title'],
+                    'case_number': x['FileLeafRef.Name'],
+                    'date_received': x['Date_x0020_Received'],
+                    'how_breach_occurred': x['How_x0020_Breach_x0020_Occurred'],
+                    'no_of_md_residents': x['No_x0020_of_x0020_MD_x0020_Residents']
+                })
+            page_start = page_start + 30
+            #year += 1
+            url = base_url + string + "&PageFirstRow={}".format(page_start)
+            print(len(rows))
+        else:
+            year += 1
+#         print("TEST BREAK")
+            #break
+    print(len(json_normalize(rows)))
+    print(type(json_normalize(rows)))
+    print(json_normalize(rows).head())
+    maryland = json_normalize(rows)
+    maryland.to_csv('test_maryland.csv')
     return maryland, 'xyz'
 
 def update_Massachusetts(most_recent_breach):

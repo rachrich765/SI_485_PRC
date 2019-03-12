@@ -1,2 +1,3 @@
 from functions import *
-update_Iowa('x')
+recent = update_Iowa('x')
+recent[0].to_csv('iowa.csv')
