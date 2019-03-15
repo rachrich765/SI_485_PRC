@@ -8,41 +8,56 @@ from bs4 import BeautifulSoup
 import lxml.html as lh
 import re
 import PyPDF2
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 
+driver = webdriver.Chrome()
 links = []
 description_links = list()
 url = 'https://www.cyber.nj.gov/data-breach-alerts'
+
 res = requests.get(url)
 soup = BeautifulSoup(res.content, 'html.parser')
 #get first item in list of postings
-titles = soup.find_all("section", {"class": "BlogList BlogList--posts-excerpt sqs-blog-list clear"})
-for t in titles:
-	description_links1 = t.find_all('a', {'class':'BlogList-item-title'}, href=True)
-	for d in description_links1:
-		description_link = d['href']
-		description_links.append(description_link)
-	for dl in description_links:
-		url2 = 'https://www.cyber.nj.gov' + str(dl)
-		res2 = requests.get(url2)
-		soup2 = BeautifulSoup(res2.content, 'html.parser')
-		try:
-			w = soup2.find_all('p', {'style': 'white-space: pre-wrap;'})
-		except: 
-			w = soup2.find_all('p', {'style':'white-space: pre-wrap;'})
-		else:
-			w = soup2.find_all('p')
-		#if pdf link exists in paragraph, acquire link
-		for h in w:
-			a = h.find('a', href=True)
-			if a:
-				link = str(a['href'])
-				if link.endswith('pdf'):
-					links.append(link)
+a = soup.find("article", {"class": "BlogList-item hentry category-data-breach tag-magecart author-njccic post-type-text article-index-1 has-categories has-tags"})
+x = a.find("a", href=True)
+link = x['href']
+url2 = 'https://www.cyber.nj.gov' + str(link)
+res2 = requests.get(url2)
+soup2 = BeautifulSoup(res2.content, 'html.parser')
+driver.get(url2)
+b = soup2.find("a", {"class":"BlogItem-pagination-link BlogItem-pagination-link--next"}, href=True)
+link2 = b.get('href')
 
-read_more = soup.find_all("a", {"class": "BlogList-pagination-link"})
-for rm in read_more:
-	if rm['href']:
-		url3 = 'https://www.cyber.nj.gov'  + str(rm['href'])
-		res3 = requests.get(url3)
-		soup3 = BeautifulSoup(res3.content, 'html.parser')
-print(links)
+pdf_urls = list()
+#close popup window
+time.sleep(5)
+python_button = driver.find_element_by_xpath("//a[@class='sqs-popup-overlay-close']").click()
+
+while True:
+	try:
+		pdfs = driver.find_elements_by_xpath("//a[contains(@href, '.pdf')]")
+		for pdf in pdfs:
+			link = pdf.get_attribute("href")
+			if link not in pdf_urls:
+				pdf_urls.append(link)
+		python_button2 = driver.find_element_by_xpath("//a[@class='BlogItem-pagination-link BlogItem-pagination-link--next']").click()
+	except:
+		break
+	
+
+for pdf_url in pdf_urls:
+	response = requests.get(pdf_url)
+	my_raw_data = response.content
+	with open("new_pdf.pdf", 'wb') as my_data:
+		my_data.write(my_raw_data)
+		my_data.close()
+	file = textract.process('new_pdf.pdf', method='pdfminer')
+	NH_dict[l] = file
+	os.remove("new_pdf.pdf")
+print(my_raw_data)
+end_time = time.time()
+print((end_time - start_time)/60)
