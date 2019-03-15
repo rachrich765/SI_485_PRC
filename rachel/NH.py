@@ -24,6 +24,7 @@ for p in all_p:
 		for x in letter_links_a[:-1]:
 			letter_links.append(x['href'])
 
+NH_dict = dict()
 links = list()
 for x in letter_links:
 	url2 = url + x
@@ -45,17 +46,11 @@ for l in links:
 	my_raw_data = response.content
 	with open("new_pdf.pdf", 'wb') as my_data:
 		my_data.write(my_raw_data)
-	my_data.close()
-	pdfFileObj = open('new_pdf.pdf','rb')
-	pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
-	num_pages = pdfReader.numPages
-	count = 0
-	text = "" 
-	while count < num_pages:
-		pageObj = pdfReader.getPage(count)  # use xrange in Py2
-		count +=1
-		text += pageObj.extractText()
-	NH_dict[l] = text
+		my_data.close()
+	file = textract.process('new_pdf.pdf', method='pdfminer')
+	NH_dict[l] = file
+	os.remove("new_pdf.pdf")
+
 
 end_time = time.time()
 print((end_time - start_time)/60)
