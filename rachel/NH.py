@@ -6,8 +6,12 @@ import requests
 import textract
 from bs4 import BeautifulSoup
 import lxml.html as lh
+import urllib
+import PyPDF2 
+import os
+import csv
 
-NH_dict = dict()
+
 url = 'https://www.doj.nh.gov/consumer/security-breaches/'
 res = requests.get(url)
 soup = BeautifulSoup(res.content, 'html.parser')
@@ -29,19 +33,31 @@ for x in letter_links:
 	for a2 in a:
 		link = str(a2['href'])
 		if link.endswith('pdf'):
-			links.append(link)
-for x in links:
-	response = requests.get(link)
+			links.append('https://www.doj.nh.gov/consumer/security-breaches/' + link)
+all_text_pdf = list()
+
+NH_dict = dict()
+text = ""
+links_len = len(links)
+
+for l in links:
+	response = requests.get(l)
 	my_raw_data = response.content
-	#write pdf file for each link
 	with open("new_pdf.pdf", 'wb') as my_data:
 		my_data.write(my_raw_data)
-	my_data.close() 
-#read pdf file
-pdf_file = open('new_pdf.pdf', 'rb')
-read_pdf = PyPDF2.PdfFileReader(pdf_file)
-number_of_pages = read_pdf.getNumPages()
-page = read_pdf.getPage(0)
-page_content = page.extractText()
-#save pdf file contents to dictionary
-NH_dict = page_content
+	my_data.close()
+	pdfFileObj = open('new_pdf.pdf','rb')
+	pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
+	num_pages = pdfReader.numPages
+	count = 0
+	text = "" 
+	while count < num_pages:
+		pageObj = pdfReader.getPage(count)  # use xrange in Py2
+		count +=1
+		text += pageObj.extractText()
+	NH_dict[l] = text
+
+end_time = time.time()
+print((end_time - start_time)/60)
+
+
