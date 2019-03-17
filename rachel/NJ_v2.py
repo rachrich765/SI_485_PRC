@@ -14,6 +14,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
+NJ_dict = dict()
 driver = webdriver.Chrome()
 links = []
 description_links = list()
@@ -56,7 +57,7 @@ for pdf_url in pdf_urls:
 		my_data.write(my_raw_data)
 		my_data.close()
 	file = textract.process('new_pdf.pdf', method='pdfminer')
-	NH_dict[l] = file
+	NJ_dict[pdf_url] = file
 	os.remove("new_pdf.pdf")
 print(my_raw_data)
 end_time = time.time()

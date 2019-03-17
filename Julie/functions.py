@@ -1,3 +1,9 @@
+import lxml.html as lh
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 from pandas.io.json import json_normalize
 from bs4 import BeautifulSoup
 from pathlib import Path
@@ -304,6 +310,7 @@ def update_Indiana(most_recent_breach):
     indiana['Individuals Affected'] = indiana['Number of Consumers Affected Nationwide']+' ('+ indiana['Number of IN Residents Affected'] +' in Indiana)'
     indiana = indiana.drop(columns = ['Number of Consumers Affected Nationwide','Number of IN Residents Affected','Status', 'Unnamed: 1'])
     
+    indiana['State Reported'] = 'Indiana'
     return indiana, 'xyz'
 
 def update_Iowa(most_recent_breach):
@@ -383,23 +390,144 @@ def update_Delaware(most_recent_breach):
 
 
 def update_NewHampshire(most_recent_breach):
-    pass
+    
+    url = 'https://www.doj.nh.gov/consumer/security-breaches/'
+    s = basic_beautiful_soup(url)
+    
+    all_p = (s.find_all('p'))
+    letter_links = list()
+    for p in all_p:
+        letter_links_a = (p.find_all('a', href=True))
+        if letter_links_a:
+            #only get links for A-Z
+            #for x in letter_links_a[:-1]:
+            for x in letter_links_a:
+                letter_links.append(x['href'])
+    columns = ['company_date', 'Link to PDF']
+    newhampshire = pd.DataFrame(columns = columns)
+    NH_dict = dict()
+    links = list()
+    for x in letter_links:
+        url2 = url + x
+        s2 = basic_beautiful_soup(url2) 
+        #titles = 
+        a = s2.find_all('a', href=True)
+        #print (a)
+        for a2 in a:
+            link = str(a2['href'])
+            if link.endswith('pdf'):
+                company_date = a2.text
+                newhampshire = newhampshire.append({'company_date':company_date,'Link to PDF':'https://www.doj.nh.gov/consumer/security-breaches/' + link}, ignore_index=True)
+                #links[company_date] = 'https://www.doj.nh.gov/consumer/security-breaches/' + link
+
+    def get_date(row):
+        pattern = r'.*?([A-Za-z]{3,10}\s*[0-9]{1,2}[,/.]*\s*[0-9]{4})'
+        try:
+            match = re.findall(pattern,row)[0]
+            return match
+        except:
+            return ''
+    def get_company(row):
+        pattern = r'(.*?)[A-Za-z]{3,10}\s*[0-9]{1,2}[,/.]*\s*[0-9]{4}'
+        try:
+            match = re.findall(pattern,row)[0]
+            return match
+        except:
+            return row
+
+    newhampshire['Dates of Breach'] = newhampshire['company_date'].apply(get_date)
+    newhampshire['Name of Entity'] = newhampshire['company_date'].apply(get_company)
+    newhampshire = newhampshire.drop(['company_date'], axis = 1)   
+
+    newhampshire['PDF text (ALL)'] = newhampshire['Link to PDF'].apply(download_parse_file)
+    
+    newhampshire['State Reported'] = 'New Hampshire'
+
+    return newhampshire, 'xyz'
+       
 
 def update_NewJersey(most_recent_breach):
-    pass
+    driver = webdriver.Chrome()
+    links = []
+    description_links = list()
+    url = 'https://www.cyber.nj.gov/data-breach-alerts'
+
+    res = requests.get(url)
+    soup = BeautifulSoup(res.content, 'html.parser')
+    #get first item in list of postings
+    a = soup.find("article", {"class": "BlogList-item hentry category-data-breach tag-magecart author-njccic post-type-text article-index-1 has-categories has-tags"})
+    x = a.find("a", href=True)
+    link = x['href']
+    url2 = 'https://www.cyber.nj.gov' + str(link)
+    res2 = requests.get(url2)
+    soup2 = BeautifulSoup(res2.content, 'html.parser')
+    driver.get(url2)
+    b = soup2.find("a", {"class":"BlogItem-pagination-link BlogItem-pagination-link--next"}, href=True)
+    link2 = b.get('href')
+
+    pdf_urls = list()
+    #close popup window
+    python_button = driver.find_element_by_xpath("//a[@class='sqs-popup-overlay-close']").click()
+
+    while True:
+        try:
+            pdfs = driver.find_elements_by_xpath("//a[contains(@href, '.pdf')]")
+            print (pdfs)
+            for pdf in pdfs:
+                titles = driver.getTitle()
+                print (titles)
+                link = pdf.get_attribute("href")
+                if link not in pdf_urls:
+                    pdf_urls.append(link)
+            python_button2 = driver.find_element_by_xpath("//a[@class='BlogItem-pagination-link BlogItem-pagination-link--next']").click()
+        except:
+            break
+        
+    #newjersey['State Reported'] = 'New Jersey'
+
+    return# newjersey, 'xyz'
 
 def update_USDeptHealth(most_recent_breach):
-    print ('INCOMPLETE')
+
     url = 'https://ocrportal.hhs.gov/ocr/breach/breach_report.jsf'
-    tables = pd.read_html(url)
-    USDH = tables[1]
-    USDH.drop(['Expand All'], axis=1)
-    USDH = USDH.rename(index=str, columns={"Name of Covered Entity": "Name of Entity", 'State': 'State Reported', 
+    res = requests.get(url)
+    soup = BeautifulSoup(res.content, 'html.parser')
+
+    tables1 = list()
+    driver = webdriver.Chrome()
+    driver.get(url)
+    columns = ['Expand All', 'Name of Covered Entity', 'State', 'Covered Entity Type',
+           'Individuals Affected', 'Breach Submission Date', 'Type of Breach',
+           'Location of Breached Information']
+    usdh = pd.DataFrame(columns = columns)
+
+    python_button = driver.find_elements_by_xpath("//a[@class='ui-paginator-page ui-state-default ui-corner-all']")
+    buttons = len(python_button)
+
+    y = driver.page_source
+    tables = pd.read_html(y, header=0)
+    data_USDHHSOCR = tables[1]
+    usdh = usdh.append(data_USDHHSOCR, ignore_index = True)
+    for i in range(buttons):
+        python_button = driver.find_elements_by_xpath("//a[@class='ui-paginator-page ui-state-default ui-corner-all']")
+        x = python_button[i]
+        x.click()
+        y = driver.page_source
+        tables = pd.read_html(y, header=0)
+        data_USDHHSOCR = tables[1]
+        print (data_USDHHSOCR.head())
+
+        usdh = usdh.append(data_USDHHSOCR, ignore_index = True)
+    driver.quit()
+    print (len(usdh))
+    usdh.drop(['Expand All'], axis=1)
+    usdh = usdh.rename(index=str, columns={"Name of Covered Entity": "Name of Entity", 'State': 'State Reported', 
         'Covered Entity': "Entity Type", 'Breach Submission Date': 'Reported Date'})
     states = { 'AK': 'Alaska', 'AL': 'Alabama', 'AR': 'Arkansas', 'AS': 'American Samoa', 'AZ': 'Arizona', 'CA': 'California', 'CO': 'Colorado', 'CT': 'Connecticut', 'DC': 'District of Columbia', 'DE': 'Delaware', 'FL': 'Florida', 'GA': 'Georgia', 'GU': 'Guam', 'HI': 'Hawaii', 'IA': 'Iowa', 'ID': 'Idaho', 'IL': 'Illinois', 'IN': 'Indiana', 'KS': 'Kansas', 'KY': 'Kentucky', 'LA': 'Louisiana', 'MA': 'Massachusetts', 'MD': 'Maryland', 'ME': 'Maine', 'MI': 'Michigan', 'MN': 'Minnesota', 'MO': 'Missouri', 'MP': 'Northern Mariana Islands', 'MS': 'Mississippi', 'MT': 'Montana', 'NA': 'National', 'NC': 'North Carolina', 'ND': 'North Dakota', 'NE': 'Nebraska', 'NH': 'New Hampshire', 'NJ': 'New Jersey', 'NM': 'New Mexico', 'NV': 'Nevada', 'NY': 'New York', 'OH': 'Ohio', 'OK': 'Oklahoma', 'OR': 'Oregon', 'PA': 'Pennsylvania', 'PR': 'Puerto Rico', 'RI': 'Rhode Island', 'SC': 'South Carolina', 'SD': 'South Dakota', 'TN': 'Tennessee', 'TX': 'Texas', 'UT': 'Utah', 'VA': 'Virginia', 'VI': 'Virgin Islands', 'VT': 'Vermont', 'WA': 'Washington', 'WI': 'Wisconsin', 'WV': 'West Virginia', 'WY': 'Wyoming' }
-    USDH['State Reported'] = USDH['State Reported'].apply(lambda x: states[x])
-    print (len(USDH))
-    return USDH, 'xyz'
+    usdh['State Reported'] = usdh['State Reported'].apply(lambda x: states[x])
+    
+
+    return usdh, 'xyz'
 
 def update_Maine(most_recent_breach):
     url = 'https://www.maine.gov/ag/consumer/identity_theft/' #URL of Main webpage

@@ -1,0 +1,501 @@
+,Expand All,Name of Entity,State Reported,Covered Entity Type,Individuals Affected,Reported Date,Type of Breach,Location of Breached Information
+0,,Arizona Health Care Cost Containment System,Arizona,Health Plan,3146,03/11/2019,Unauthorized Access/Disclosure,Paper/Films
+1,,Emerson Hospital,Massachusetts,Healthcare Provider,6314,03/08/2019,Unauthorized Access/Disclosure,Other
+2,,Direct Scripts,Ohio,Healthcare Provider,9319,03/06/2019,Hacking/IT Incident,Network Server
+3,,Maffi Clinics,Arizona,Healthcare Provider,10465,03/06/2019,Hacking/IT Incident,Network Server
+4,,St. Francis Physician Services,South Carolina,Healthcare Provider,32178,03/04/2019,Hacking/IT Incident,Network Server
+5,,"RSC Insurance Brokerage, Inc.",Massachusetts,Business Associate,2088,03/01/2019,Theft,Laptop
+6,,"Arthritis & Rheumatism Associates, P.C.",Maryland,Healthcare Provider,500,03/01/2019,Hacking/IT Incident,Electronic Medical Record
+7,,Pasquotank-Camden Emergency Medical Service,North Carolina,Healthcare Provider,20420,02/28/2019,Hacking/IT Incident,Network Server
+8,,Rush University Medical Center,Illinois,Healthcare Provider,44924,02/28/2019,Unauthorized Access/Disclosure,Network Server
+9,,Humana Inc,Kentucky,Health Plan,1447,02/27/2019,Hacking/IT Incident,Network Server
+10,,West Virginia Public Employees Insurance Agency,West Virginia,Health Plan,1400,02/27/2019,Hacking/IT Incident,Network Server
+11,,Molina Healthcare,California,Health Plan,895,02/22/2019,Hacking/IT Incident,Network Server
+12,,"Delaware Guidance Services for Children and Youth, Inc.",Delaware,Healthcare Provider,50000,02/22/2019,Hacking/IT Incident,"Desktop Computer, Electronic Medical Record, Email, Laptop"
+13,,UConn Health,Connecticut,Healthcare Provider,326629,02/21/2019,Hacking/IT Incident,Email
+14,,Rocky Boy Health Center,Montana,Healthcare Provider,6000,02/21/2019,Theft,Other
+15,,"Rutland Hospital, Inc. d/b/a/ Rutland Regional Medical Center",Vermont,Healthcare Provider,72224,02/20/2019,Hacking/IT Incident,Email
+16,,UW Medicine,Washington,Healthcare Provider,973024,02/20/2019,Hacking/IT Incident,Network Server
+17,,Columbia Surgical Specialist of Spokane,Washington,Healthcare Provider,400000,02/18/2019,Hacking/IT Incident,Network Server
+18,,"OneDigital/Digital Insurance, LLC",Georgia,Business Associate,2763,02/15/2019,Theft,Laptop
+19,,California Physicians' Service d/b/a Blue Shield of California,California,Health Plan,18416,02/15/2019,Hacking/IT Incident,Network Server
+20,,Kids Central Inc.,Florida,Business Associate,3250,02/15/2019,Unauthorized Access/Disclosure,Email
+21,,Memorial Hospital at Gulfport,Mississippi,Healthcare Provider,30642,02/15/2019,Hacking/IT Incident,Email
+22,,Blue Cross Blue Shield of Massachusetts,Massachusetts,Health Plan,1262,02/15/2019,Hacking/IT Incident,Email
+23,,AltaMed Health Services Corporation,California,Healthcare Provider,6000,02/15/2019,Hacking/IT Incident,Network Server
+24,,Portsmouth Community Health Center,Virginia,Healthcare Provider,12000,02/14/2019,Hacking/IT Incident,Network Server
+25,,Rocky Mountain Health Care Services,Colorado,Healthcare Provider,971,02/11/2019,Hacking/IT Incident,Email
+26,,"Crawford Wellness Center, Inc",Texas,Healthcare Provider,1500,02/11/2019,Theft,Paper/Films
+27,,"Green Ridge Behavioral Health, LLC",Maryland,Healthcare Provider,14000,02/11/2019,Hacking/IT Incident,"Electronic Medical Record, Network Server"
+28,,"Kentucky Counseling Center, LLC",Kentucky,Healthcare Provider,16440,02/11/2019,Unauthorized Access/Disclosure,Electronic Medical Record
+29,,Rush University Medical Center,Illinois,Healthcare Provider,908,02/11/2019,Unauthorized Access/Disclosure,Paper/Films
+30,,"USR Holdings, LLC",Florida,Business Associate,2903,02/08/2019,Hacking/IT Incident,Network Server
+31,,AZ Plastic Surgery Center,Arizona,Healthcare Provider,5524,02/08/2019,Hacking/IT Incident,Network Server
+32,,AdventHealth Medical Group,Florida,Healthcare Provider,42161,02/05/2019,Hacking/IT Incident,Network Server
+33,,"United Hospital District, Inc.",Minnesota,Healthcare Provider,2143,02/04/2019,Hacking/IT Incident,Email
+34,,"Lakeland Care, Inc.",Wisconsin,Healthcare Provider,1300,02/04/2019,Hacking/IT Incident,Email
+35,,Rainbow Dental Care PLLC,Texas,Healthcare Provider,10000,02/04/2019,Hacking/IT Incident,Desktop Computer
+36,,Anesthesia Associates of Kansas City,Kansas,Healthcare Provider,3472,02/01/2019,Theft,Paper/Films
+37,,"Reproductive Medicine and Infertility Associates, P.A.",Minnesota,Healthcare Provider,40000,02/01/2019,Hacking/IT Incident,"Desktop Computer, Network Server"
+38,,CHI - Lakewood Health,Minnesota,Healthcare Provider,885,01/31/2019,Unauthorized Access/Disclosure,Email
+39,,CVS Pharmacy,Rhode Island,Healthcare Provider,5645,01/30/2019,Theft,Paper/Films
+40,,Aetna,Connecticut,Health Plan,2030,01/30/2019,Hacking/IT Incident,Email
+41,,"Cambridge Healthcare Services, LLC",California,Business Associate,10866,01/29/2019,Theft,Laptop
+42,,Roper St. Francis Healthcare,South Carolina,Healthcare Provider,35253,01/29/2019,Hacking/IT Incident,Email
+43,,"Lanier Family & Cosmetic Dentistry, P.C.",Georgia,Healthcare Provider,1950,01/29/2019,Unauthorized Access/Disclosure,Email
+44,,Pawnee County Memorial Hospital,Nebraska,Healthcare Provider,7038,01/28/2019,Hacking/IT Incident,Email
+45,,"Verity Health System of California, Inc.",California,Business Associate,2988,01/26/2019,Hacking/IT Incident,Email
+46,,"Dr. DeLuca Dr. Marciano & Associates, P.C.",Connecticut,Healthcare Provider,23578,01/25/2019,Hacking/IT Incident,"Desktop Computer, Electronic Medical Record, Network Server"
+47,,Valley Professionals Community Health Center,Indiana,Healthcare Provider,12029,01/25/2019,Hacking/IT Incident,Email
+48,,HealthFitness,Illinois,Business Associate,1808,01/25/2019,Unauthorized Access/Disclosure,Other
+49,,Sunflower State Health Plan,Kansas,Health Plan,1625,01/25/2019,Unauthorized Access/Disclosure,Other
+50,,"Unum Group, on behalf of its subsidiaries - Unum Life Insurance and Colonial Life & Accident Insurance",Tennessee,Health Plan,532,01/24/2019,Hacking/IT Incident,Email
+51,,EyeSouth Partners,Georgia,Business Associate,24113,01/23/2019,Hacking/IT Incident,Email
+52,,Stonehaven Dental,Texas,Healthcare Provider,6289,01/22/2019,Theft,Network Server
+53,,"Critical Care, Pulmonary and Sleep Associates, PLLP",Colorado,Healthcare Provider,23377,01/21/2019,Hacking/IT Incident,Email
+54,,Valley Hope Association,Kansas,Healthcare Provider,70799,01/18/2019,Hacking/IT Incident,Email
+55,,Tri-Cities Chaplaincy,Washington,Healthcare Provider,1086,01/18/2019,Hacking/IT Incident,Email
+56,,"FABEN Obstetrics and Gynecology, LLC",Florida,Healthcare Provider,6092,01/18/2019,Hacking/IT Incident,Network Server
+57,,"Integrity, Inc. d/b/a Integrity House",New Jersey,Healthcare Provider,7206,01/18/2019,Theft,"Desktop Computer, Laptop"
+58,,"Las Colinas Orthopedic Surgery & Sports Medicine, PA",Texas,Healthcare Provider,76000,01/18/2019,Theft,Other Portable Electronic Device
+59,,ABB Inc. Active Employee Group Benefit Plan,North Carolina,Health Plan,6877,01/18/2019,Unauthorized Access/Disclosure,Paper/Films
+60,,Lebanon VA Medical Center,Pennsylvania,Healthcare Provider,1002,01/16/2019,Unauthorized Access/Disclosure,Email
+61,,Humana Inc.,Kentucky,Health Plan,598,01/15/2019,Hacking/IT Incident,Other
+62,,"Premier Specialties, Incorporated",Texas,Healthcare Provider,1300,01/14/2019,Unauthorized Access/Disclosure,Paper/Films
+63,,Sacred Heart Rehabilitation Center,Michigan,Healthcare Provider,2266,01/10/2019,Unauthorized Access/Disclosure,Email
+64,,Humana Inc,Kentucky,Health Plan,1211,01/09/2019,Unauthorized Access/Disclosure,Other
+65,,"Family Physicians of Winter Park, Inc.",Kentucky,Healthcare Provider,8429,01/08/2019,Hacking/IT Incident,Email
+66,,Dermacare Brickell,Florida,Healthcare Provider,1800,01/07/2019,Improper Disposal,Paper/Films
+67,,NORTH ATLANTA MEDICAL CLINIC,Georgia,Healthcare Provider,2800,01/06/2019,Hacking/IT Incident,Desktop Computer
+68,,Managed Health Services,Indiana,Health Plan,31300,01/03/2019,Hacking/IT Incident,Email
+69,,Managed Health Services,Indiana,Health Plan,576,01/03/2019,Unauthorized Access/Disclosure,Paper/Films
+70,,Centerstone Insurance and Financial Services (d/b/a BenefitMall),Texas,Business Associate,111589,01/03/2019,Hacking/IT Incident,Email
+71,,Humana Inc,Kentucky,Health Plan,684,12/31/2018,Theft,Paper/Films
+72,,Choice Rehabilitation,Missouri,Business Associate,4309,12/29/2018,Hacking/IT Incident,"Email, Laptop"
+73,,WEA Insurance Corporation,Wisconsin,Health Plan,850,12/27/2018,Hacking/IT Incident,Email
+74,,"SEIU Local 32BJ, District 36 Building Operators Welfare Trust Fund",Pennsylvania,Health Plan,911,12/21/2018,Unauthorized Access/Disclosure,Email
+75,,Kent County Community Mental Health Authority,Michigan,Healthcare Provider,2284,12/21/2018,Hacking/IT Incident,Email
+76,,JAND Inc. d/b/a Warby Parker,New York,Healthcare Provider,177890,12/20/2018,Hacking/IT Incident,Network Server
+77,,The Podiatric Offices of Bobby Yee,California,Healthcare Provider,24000,12/20/2018,Hacking/IT Incident,"Desktop Computer, Laptop, Other Portable Electronic Device"
+78,,Dermatologists of Southwest Ohio,Ohio,Healthcare Provider,733,12/20/2018,Improper Disposal,Paper/Films
+79,,"Virtual Radiologic Professionals, LLC",Minnesota,Healthcare Provider,2568,12/19/2018,Hacking/IT Incident,Other
+80,,Tift Regional Medical Center,Georgia,Healthcare Provider,1045,12/18/2018,Hacking/IT Incident,Email
+81,,Barnes-Jewish Hospital,Missouri,Healthcare Provider,1643,12/18/2018,Hacking/IT Incident,Network Server
+82,,University of Vermont Health Network - Elizabethtown Community Hospital,New York,Healthcare Provider,32470,12/17/2018,Hacking/IT Incident,Email
+83,,Fort Defiance Indian Hospital,Arizona,Healthcare Provider,1000,12/17/2018,Hacking/IT Incident,Desktop Computer
+84,,"Ben-Ora, Hansen & Vanesian Imaging, Ltd d/b/a Solis Mammography",Arizona,Healthcare Provider,500,12/16/2018,Theft,Desktop Computer
+85,,Massachusetts General Hospital,Massachusetts,Healthcare Provider,588,12/14/2018,Unauthorized Access/Disclosure,Paper/Films
+86,,Contra Costa Health Plan,California,Health Plan,862,12/13/2018,Unauthorized Access/Disclosure,"Electronic Medical Record, Email"
+87,,Smile Designs by Sandwick,Minnesota,Healthcare Provider,900,12/13/2018,Hacking/IT Incident,Other
+88,,"Alpha-Omega Endocrinology, Diabetes and Metabolism Center, PC",Arizona,Healthcare Provider,1000,12/12/2018,Unauthorized Access/Disclosure,"Desktop Computer, Electronic Medical Record, Email, Network Server, Other, Other Portable Electronic Device, Paper/Films"
+89,,Adams County,Wisconsin,Healthcare Provider,258120,12/11/2018,Unauthorized Access/Disclosure,"Network Server, Other"
+90,,County of Ramsey,Minnesota,Healthcare Provider,599,12/11/2018,Hacking/IT Incident,Email
+91,,Butler County Board of County Commissioners,Ohio,Health Plan,1912,12/04/2018,Unauthorized Access/Disclosure,Email
+92,,Georgia Department of Human Services,Georgia,Business Associate,435339,11/30/2018,Unauthorized Access/Disclosure,"Network Server, Other Portable Electronic Device"
+93,,"CHI Health Care, Inc.",Maryland,Healthcare Provider,722,11/30/2018,Unauthorized Access/Disclosure,"Other Portable Electronic Device, Paper/Films"
+94,,"Mind and Motion, LLC",Georgia,Healthcare Provider,16000,11/30/2018,Hacking/IT Incident,Network Server
+95,,CCRM Dallas-Fort Worth,Texas,Healthcare Provider,1117,11/30/2018,Hacking/IT Incident,Email
+96,,Thielen Student Health Center,Iowa,Healthcare Provider,599,11/30/2018,Unauthorized Access/Disclosure,Email
+97,,"Prairie Fields Family Medicine, PC",Nebraska,Healthcare Provider,6450,11/30/2018,Unauthorized Access/Disclosure,Email
+98,,"OrthoTexas Physicians and Surgeons, PLLC",Texas,Healthcare Provider,2172,11/28/2018,Unauthorized Access/Disclosure,Paper/Films
+99,,Steward Medical Group,Massachusetts,Healthcare Provider,16276,11/28/2018,Hacking/IT Incident,Network Server
+100,,Arizona Health Care Cost Containment System,Arizona,Health Plan,3146,03/11/2019,Unauthorized Access/Disclosure,Paper/Films
+101,,Emerson Hospital,Massachusetts,Healthcare Provider,6314,03/08/2019,Unauthorized Access/Disclosure,Other
+102,,Direct Scripts,Ohio,Healthcare Provider,9319,03/06/2019,Hacking/IT Incident,Network Server
+103,,Maffi Clinics,Arizona,Healthcare Provider,10465,03/06/2019,Hacking/IT Incident,Network Server
+104,,St. Francis Physician Services,South Carolina,Healthcare Provider,32178,03/04/2019,Hacking/IT Incident,Network Server
+105,,"RSC Insurance Brokerage, Inc.",Massachusetts,Business Associate,2088,03/01/2019,Theft,Laptop
+106,,"Arthritis & Rheumatism Associates, P.C.",Maryland,Healthcare Provider,500,03/01/2019,Hacking/IT Incident,Electronic Medical Record
+107,,Pasquotank-Camden Emergency Medical Service,North Carolina,Healthcare Provider,20420,02/28/2019,Hacking/IT Incident,Network Server
+108,,Rush University Medical Center,Illinois,Healthcare Provider,44924,02/28/2019,Unauthorized Access/Disclosure,Network Server
+109,,Humana Inc,Kentucky,Health Plan,1447,02/27/2019,Hacking/IT Incident,Network Server
+110,,West Virginia Public Employees Insurance Agency,West Virginia,Health Plan,1400,02/27/2019,Hacking/IT Incident,Network Server
+111,,Molina Healthcare,California,Health Plan,895,02/22/2019,Hacking/IT Incident,Network Server
+112,,"Delaware Guidance Services for Children and Youth, Inc.",Delaware,Healthcare Provider,50000,02/22/2019,Hacking/IT Incident,"Desktop Computer, Electronic Medical Record, Email, Laptop"
+113,,UConn Health,Connecticut,Healthcare Provider,326629,02/21/2019,Hacking/IT Incident,Email
+114,,Rocky Boy Health Center,Montana,Healthcare Provider,6000,02/21/2019,Theft,Other
+115,,"Rutland Hospital, Inc. d/b/a/ Rutland Regional Medical Center",Vermont,Healthcare Provider,72224,02/20/2019,Hacking/IT Incident,Email
+116,,UW Medicine,Washington,Healthcare Provider,973024,02/20/2019,Hacking/IT Incident,Network Server
+117,,Columbia Surgical Specialist of Spokane,Washington,Healthcare Provider,400000,02/18/2019,Hacking/IT Incident,Network Server
+118,,"OneDigital/Digital Insurance, LLC",Georgia,Business Associate,2763,02/15/2019,Theft,Laptop
+119,,California Physicians' Service d/b/a Blue Shield of California,California,Health Plan,18416,02/15/2019,Hacking/IT Incident,Network Server
+120,,Kids Central Inc.,Florida,Business Associate,3250,02/15/2019,Unauthorized Access/Disclosure,Email
+121,,Memorial Hospital at Gulfport,Mississippi,Healthcare Provider,30642,02/15/2019,Hacking/IT Incident,Email
+122,,Blue Cross Blue Shield of Massachusetts,Massachusetts,Health Plan,1262,02/15/2019,Hacking/IT Incident,Email
+123,,AltaMed Health Services Corporation,California,Healthcare Provider,6000,02/15/2019,Hacking/IT Incident,Network Server
+124,,Portsmouth Community Health Center,Virginia,Healthcare Provider,12000,02/14/2019,Hacking/IT Incident,Network Server
+125,,Rocky Mountain Health Care Services,Colorado,Healthcare Provider,971,02/11/2019,Hacking/IT Incident,Email
+126,,"Crawford Wellness Center, Inc",Texas,Healthcare Provider,1500,02/11/2019,Theft,Paper/Films
+127,,"Green Ridge Behavioral Health, LLC",Maryland,Healthcare Provider,14000,02/11/2019,Hacking/IT Incident,"Electronic Medical Record, Network Server"
+128,,"Kentucky Counseling Center, LLC",Kentucky,Healthcare Provider,16440,02/11/2019,Unauthorized Access/Disclosure,Electronic Medical Record
+129,,Rush University Medical Center,Illinois,Healthcare Provider,908,02/11/2019,Unauthorized Access/Disclosure,Paper/Films
+130,,"USR Holdings, LLC",Florida,Business Associate,2903,02/08/2019,Hacking/IT Incident,Network Server
+131,,AZ Plastic Surgery Center,Arizona,Healthcare Provider,5524,02/08/2019,Hacking/IT Incident,Network Server
+132,,AdventHealth Medical Group,Florida,Healthcare Provider,42161,02/05/2019,Hacking/IT Incident,Network Server
+133,,"United Hospital District, Inc.",Minnesota,Healthcare Provider,2143,02/04/2019,Hacking/IT Incident,Email
+134,,"Lakeland Care, Inc.",Wisconsin,Healthcare Provider,1300,02/04/2019,Hacking/IT Incident,Email
+135,,Rainbow Dental Care PLLC,Texas,Healthcare Provider,10000,02/04/2019,Hacking/IT Incident,Desktop Computer
+136,,Anesthesia Associates of Kansas City,Kansas,Healthcare Provider,3472,02/01/2019,Theft,Paper/Films
+137,,"Reproductive Medicine and Infertility Associates, P.A.",Minnesota,Healthcare Provider,40000,02/01/2019,Hacking/IT Incident,"Desktop Computer, Network Server"
+138,,CHI - Lakewood Health,Minnesota,Healthcare Provider,885,01/31/2019,Unauthorized Access/Disclosure,Email
+139,,CVS Pharmacy,Rhode Island,Healthcare Provider,5645,01/30/2019,Theft,Paper/Films
+140,,Aetna,Connecticut,Health Plan,2030,01/30/2019,Hacking/IT Incident,Email
+141,,"Cambridge Healthcare Services, LLC",California,Business Associate,10866,01/29/2019,Theft,Laptop
+142,,Roper St. Francis Healthcare,South Carolina,Healthcare Provider,35253,01/29/2019,Hacking/IT Incident,Email
+143,,"Lanier Family & Cosmetic Dentistry, P.C.",Georgia,Healthcare Provider,1950,01/29/2019,Unauthorized Access/Disclosure,Email
+144,,Pawnee County Memorial Hospital,Nebraska,Healthcare Provider,7038,01/28/2019,Hacking/IT Incident,Email
+145,,"Verity Health System of California, Inc.",California,Business Associate,2988,01/26/2019,Hacking/IT Incident,Email
+146,,"Dr. DeLuca Dr. Marciano & Associates, P.C.",Connecticut,Healthcare Provider,23578,01/25/2019,Hacking/IT Incident,"Desktop Computer, Electronic Medical Record, Network Server"
+147,,Valley Professionals Community Health Center,Indiana,Healthcare Provider,12029,01/25/2019,Hacking/IT Incident,Email
+148,,HealthFitness,Illinois,Business Associate,1808,01/25/2019,Unauthorized Access/Disclosure,Other
+149,,Sunflower State Health Plan,Kansas,Health Plan,1625,01/25/2019,Unauthorized Access/Disclosure,Other
+150,,"Unum Group, on behalf of its subsidiaries - Unum Life Insurance and Colonial Life & Accident Insurance",Tennessee,Health Plan,532,01/24/2019,Hacking/IT Incident,Email
+151,,EyeSouth Partners,Georgia,Business Associate,24113,01/23/2019,Hacking/IT Incident,Email
+152,,Stonehaven Dental,Texas,Healthcare Provider,6289,01/22/2019,Theft,Network Server
+153,,"Critical Care, Pulmonary and Sleep Associates, PLLP",Colorado,Healthcare Provider,23377,01/21/2019,Hacking/IT Incident,Email
+154,,Valley Hope Association,Kansas,Healthcare Provider,70799,01/18/2019,Hacking/IT Incident,Email
+155,,Tri-Cities Chaplaincy,Washington,Healthcare Provider,1086,01/18/2019,Hacking/IT Incident,Email
+156,,"FABEN Obstetrics and Gynecology, LLC",Florida,Healthcare Provider,6092,01/18/2019,Hacking/IT Incident,Network Server
+157,,"Integrity, Inc. d/b/a Integrity House",New Jersey,Healthcare Provider,7206,01/18/2019,Theft,"Desktop Computer, Laptop"
+158,,"Las Colinas Orthopedic Surgery & Sports Medicine, PA",Texas,Healthcare Provider,76000,01/18/2019,Theft,Other Portable Electronic Device
+159,,ABB Inc. Active Employee Group Benefit Plan,North Carolina,Health Plan,6877,01/18/2019,Unauthorized Access/Disclosure,Paper/Films
+160,,Lebanon VA Medical Center,Pennsylvania,Healthcare Provider,1002,01/16/2019,Unauthorized Access/Disclosure,Email
+161,,Humana Inc.,Kentucky,Health Plan,598,01/15/2019,Hacking/IT Incident,Other
+162,,"Premier Specialties, Incorporated",Texas,Healthcare Provider,1300,01/14/2019,Unauthorized Access/Disclosure,Paper/Films
+163,,Sacred Heart Rehabilitation Center,Michigan,Healthcare Provider,2266,01/10/2019,Unauthorized Access/Disclosure,Email
+164,,Humana Inc,Kentucky,Health Plan,1211,01/09/2019,Unauthorized Access/Disclosure,Other
+165,,"Family Physicians of Winter Park, Inc.",Kentucky,Healthcare Provider,8429,01/08/2019,Hacking/IT Incident,Email
+166,,Dermacare Brickell,Florida,Healthcare Provider,1800,01/07/2019,Improper Disposal,Paper/Films
+167,,NORTH ATLANTA MEDICAL CLINIC,Georgia,Healthcare Provider,2800,01/06/2019,Hacking/IT Incident,Desktop Computer
+168,,Managed Health Services,Indiana,Health Plan,31300,01/03/2019,Hacking/IT Incident,Email
+169,,Managed Health Services,Indiana,Health Plan,576,01/03/2019,Unauthorized Access/Disclosure,Paper/Films
+170,,Centerstone Insurance and Financial Services (d/b/a BenefitMall),Texas,Business Associate,111589,01/03/2019,Hacking/IT Incident,Email
+171,,Humana Inc,Kentucky,Health Plan,684,12/31/2018,Theft,Paper/Films
+172,,Choice Rehabilitation,Missouri,Business Associate,4309,12/29/2018,Hacking/IT Incident,"Email, Laptop"
+173,,WEA Insurance Corporation,Wisconsin,Health Plan,850,12/27/2018,Hacking/IT Incident,Email
+174,,"SEIU Local 32BJ, District 36 Building Operators Welfare Trust Fund",Pennsylvania,Health Plan,911,12/21/2018,Unauthorized Access/Disclosure,Email
+175,,Kent County Community Mental Health Authority,Michigan,Healthcare Provider,2284,12/21/2018,Hacking/IT Incident,Email
+176,,JAND Inc. d/b/a Warby Parker,New York,Healthcare Provider,177890,12/20/2018,Hacking/IT Incident,Network Server
+177,,The Podiatric Offices of Bobby Yee,California,Healthcare Provider,24000,12/20/2018,Hacking/IT Incident,"Desktop Computer, Laptop, Other Portable Electronic Device"
+178,,Dermatologists of Southwest Ohio,Ohio,Healthcare Provider,733,12/20/2018,Improper Disposal,Paper/Films
+179,,"Virtual Radiologic Professionals, LLC",Minnesota,Healthcare Provider,2568,12/19/2018,Hacking/IT Incident,Other
+180,,Tift Regional Medical Center,Georgia,Healthcare Provider,1045,12/18/2018,Hacking/IT Incident,Email
+181,,Barnes-Jewish Hospital,Missouri,Healthcare Provider,1643,12/18/2018,Hacking/IT Incident,Network Server
+182,,University of Vermont Health Network - Elizabethtown Community Hospital,New York,Healthcare Provider,32470,12/17/2018,Hacking/IT Incident,Email
+183,,Fort Defiance Indian Hospital,Arizona,Healthcare Provider,1000,12/17/2018,Hacking/IT Incident,Desktop Computer
+184,,"Ben-Ora, Hansen & Vanesian Imaging, Ltd d/b/a Solis Mammography",Arizona,Healthcare Provider,500,12/16/2018,Theft,Desktop Computer
+185,,Massachusetts General Hospital,Massachusetts,Healthcare Provider,588,12/14/2018,Unauthorized Access/Disclosure,Paper/Films
+186,,Contra Costa Health Plan,California,Health Plan,862,12/13/2018,Unauthorized Access/Disclosure,"Electronic Medical Record, Email"
+187,,Smile Designs by Sandwick,Minnesota,Healthcare Provider,900,12/13/2018,Hacking/IT Incident,Other
+188,,"Alpha-Omega Endocrinology, Diabetes and Metabolism Center, PC",Arizona,Healthcare Provider,1000,12/12/2018,Unauthorized Access/Disclosure,"Desktop Computer, Electronic Medical Record, Email, Network Server, Other, Other Portable Electronic Device, Paper/Films"
+189,,Adams County,Wisconsin,Healthcare Provider,258120,12/11/2018,Unauthorized Access/Disclosure,"Network Server, Other"
+190,,County of Ramsey,Minnesota,Healthcare Provider,599,12/11/2018,Hacking/IT Incident,Email
+191,,Butler County Board of County Commissioners,Ohio,Health Plan,1912,12/04/2018,Unauthorized Access/Disclosure,Email
+192,,Georgia Department of Human Services,Georgia,Business Associate,435339,11/30/2018,Unauthorized Access/Disclosure,"Network Server, Other Portable Electronic Device"
+193,,"CHI Health Care, Inc.",Maryland,Healthcare Provider,722,11/30/2018,Unauthorized Access/Disclosure,"Other Portable Electronic Device, Paper/Films"
+194,,"Mind and Motion, LLC",Georgia,Healthcare Provider,16000,11/30/2018,Hacking/IT Incident,Network Server
+195,,CCRM Dallas-Fort Worth,Texas,Healthcare Provider,1117,11/30/2018,Hacking/IT Incident,Email
+196,,Thielen Student Health Center,Iowa,Healthcare Provider,599,11/30/2018,Unauthorized Access/Disclosure,Email
+197,,"Prairie Fields Family Medicine, PC",Nebraska,Healthcare Provider,6450,11/30/2018,Unauthorized Access/Disclosure,Email
+198,,"OrthoTexas Physicians and Surgeons, PLLC",Texas,Healthcare Provider,2172,11/28/2018,Unauthorized Access/Disclosure,Paper/Films
+199,,Steward Medical Group,Massachusetts,Healthcare Provider,16276,11/28/2018,Hacking/IT Incident,Network Server
+200,,Arizona Health Care Cost Containment System,Arizona,Health Plan,3146,03/11/2019,Unauthorized Access/Disclosure,Paper/Films
+201,,Emerson Hospital,Massachusetts,Healthcare Provider,6314,03/08/2019,Unauthorized Access/Disclosure,Other
+202,,Direct Scripts,Ohio,Healthcare Provider,9319,03/06/2019,Hacking/IT Incident,Network Server
+203,,Maffi Clinics,Arizona,Healthcare Provider,10465,03/06/2019,Hacking/IT Incident,Network Server
+204,,St. Francis Physician Services,South Carolina,Healthcare Provider,32178,03/04/2019,Hacking/IT Incident,Network Server
+205,,"RSC Insurance Brokerage, Inc.",Massachusetts,Business Associate,2088,03/01/2019,Theft,Laptop
+206,,"Arthritis & Rheumatism Associates, P.C.",Maryland,Healthcare Provider,500,03/01/2019,Hacking/IT Incident,Electronic Medical Record
+207,,Pasquotank-Camden Emergency Medical Service,North Carolina,Healthcare Provider,20420,02/28/2019,Hacking/IT Incident,Network Server
+208,,Rush University Medical Center,Illinois,Healthcare Provider,44924,02/28/2019,Unauthorized Access/Disclosure,Network Server
+209,,Humana Inc,Kentucky,Health Plan,1447,02/27/2019,Hacking/IT Incident,Network Server
+210,,West Virginia Public Employees Insurance Agency,West Virginia,Health Plan,1400,02/27/2019,Hacking/IT Incident,Network Server
+211,,Molina Healthcare,California,Health Plan,895,02/22/2019,Hacking/IT Incident,Network Server
+212,,"Delaware Guidance Services for Children and Youth, Inc.",Delaware,Healthcare Provider,50000,02/22/2019,Hacking/IT Incident,"Desktop Computer, Electronic Medical Record, Email, Laptop"
+213,,UConn Health,Connecticut,Healthcare Provider,326629,02/21/2019,Hacking/IT Incident,Email
+214,,Rocky Boy Health Center,Montana,Healthcare Provider,6000,02/21/2019,Theft,Other
+215,,"Rutland Hospital, Inc. d/b/a/ Rutland Regional Medical Center",Vermont,Healthcare Provider,72224,02/20/2019,Hacking/IT Incident,Email
+216,,UW Medicine,Washington,Healthcare Provider,973024,02/20/2019,Hacking/IT Incident,Network Server
+217,,Columbia Surgical Specialist of Spokane,Washington,Healthcare Provider,400000,02/18/2019,Hacking/IT Incident,Network Server
+218,,"OneDigital/Digital Insurance, LLC",Georgia,Business Associate,2763,02/15/2019,Theft,Laptop
+219,,California Physicians' Service d/b/a Blue Shield of California,California,Health Plan,18416,02/15/2019,Hacking/IT Incident,Network Server
+220,,Kids Central Inc.,Florida,Business Associate,3250,02/15/2019,Unauthorized Access/Disclosure,Email
+221,,Memorial Hospital at Gulfport,Mississippi,Healthcare Provider,30642,02/15/2019,Hacking/IT Incident,Email
+222,,Blue Cross Blue Shield of Massachusetts,Massachusetts,Health Plan,1262,02/15/2019,Hacking/IT Incident,Email
+223,,AltaMed Health Services Corporation,California,Healthcare Provider,6000,02/15/2019,Hacking/IT Incident,Network Server
+224,,Portsmouth Community Health Center,Virginia,Healthcare Provider,12000,02/14/2019,Hacking/IT Incident,Network Server
+225,,Rocky Mountain Health Care Services,Colorado,Healthcare Provider,971,02/11/2019,Hacking/IT Incident,Email
+226,,"Crawford Wellness Center, Inc",Texas,Healthcare Provider,1500,02/11/2019,Theft,Paper/Films
+227,,"Green Ridge Behavioral Health, LLC",Maryland,Healthcare Provider,14000,02/11/2019,Hacking/IT Incident,"Electronic Medical Record, Network Server"
+228,,"Kentucky Counseling Center, LLC",Kentucky,Healthcare Provider,16440,02/11/2019,Unauthorized Access/Disclosure,Electronic Medical Record
+229,,Rush University Medical Center,Illinois,Healthcare Provider,908,02/11/2019,Unauthorized Access/Disclosure,Paper/Films
+230,,"USR Holdings, LLC",Florida,Business Associate,2903,02/08/2019,Hacking/IT Incident,Network Server
+231,,AZ Plastic Surgery Center,Arizona,Healthcare Provider,5524,02/08/2019,Hacking/IT Incident,Network Server
+232,,AdventHealth Medical Group,Florida,Healthcare Provider,42161,02/05/2019,Hacking/IT Incident,Network Server
+233,,"United Hospital District, Inc.",Minnesota,Healthcare Provider,2143,02/04/2019,Hacking/IT Incident,Email
+234,,"Lakeland Care, Inc.",Wisconsin,Healthcare Provider,1300,02/04/2019,Hacking/IT Incident,Email
+235,,Rainbow Dental Care PLLC,Texas,Healthcare Provider,10000,02/04/2019,Hacking/IT Incident,Desktop Computer
+236,,Anesthesia Associates of Kansas City,Kansas,Healthcare Provider,3472,02/01/2019,Theft,Paper/Films
+237,,"Reproductive Medicine and Infertility Associates, P.A.",Minnesota,Healthcare Provider,40000,02/01/2019,Hacking/IT Incident,"Desktop Computer, Network Server"
+238,,CHI - Lakewood Health,Minnesota,Healthcare Provider,885,01/31/2019,Unauthorized Access/Disclosure,Email
+239,,CVS Pharmacy,Rhode Island,Healthcare Provider,5645,01/30/2019,Theft,Paper/Films
+240,,Aetna,Connecticut,Health Plan,2030,01/30/2019,Hacking/IT Incident,Email
+241,,"Cambridge Healthcare Services, LLC",California,Business Associate,10866,01/29/2019,Theft,Laptop
+242,,Roper St. Francis Healthcare,South Carolina,Healthcare Provider,35253,01/29/2019,Hacking/IT Incident,Email
+243,,"Lanier Family & Cosmetic Dentistry, P.C.",Georgia,Healthcare Provider,1950,01/29/2019,Unauthorized Access/Disclosure,Email
+244,,Pawnee County Memorial Hospital,Nebraska,Healthcare Provider,7038,01/28/2019,Hacking/IT Incident,Email
+245,,"Verity Health System of California, Inc.",California,Business Associate,2988,01/26/2019,Hacking/IT Incident,Email
+246,,"Dr. DeLuca Dr. Marciano & Associates, P.C.",Connecticut,Healthcare Provider,23578,01/25/2019,Hacking/IT Incident,"Desktop Computer, Electronic Medical Record, Network Server"
+247,,Valley Professionals Community Health Center,Indiana,Healthcare Provider,12029,01/25/2019,Hacking/IT Incident,Email
+248,,HealthFitness,Illinois,Business Associate,1808,01/25/2019,Unauthorized Access/Disclosure,Other
+249,,Sunflower State Health Plan,Kansas,Health Plan,1625,01/25/2019,Unauthorized Access/Disclosure,Other
+250,,"Unum Group, on behalf of its subsidiaries - Unum Life Insurance and Colonial Life & Accident Insurance",Tennessee,Health Plan,532,01/24/2019,Hacking/IT Incident,Email
+251,,EyeSouth Partners,Georgia,Business Associate,24113,01/23/2019,Hacking/IT Incident,Email
+252,,Stonehaven Dental,Texas,Healthcare Provider,6289,01/22/2019,Theft,Network Server
+253,,"Critical Care, Pulmonary and Sleep Associates, PLLP",Colorado,Healthcare Provider,23377,01/21/2019,Hacking/IT Incident,Email
+254,,Valley Hope Association,Kansas,Healthcare Provider,70799,01/18/2019,Hacking/IT Incident,Email
+255,,Tri-Cities Chaplaincy,Washington,Healthcare Provider,1086,01/18/2019,Hacking/IT Incident,Email
+256,,"FABEN Obstetrics and Gynecology, LLC",Florida,Healthcare Provider,6092,01/18/2019,Hacking/IT Incident,Network Server
+257,,"Integrity, Inc. d/b/a Integrity House",New Jersey,Healthcare Provider,7206,01/18/2019,Theft,"Desktop Computer, Laptop"
+258,,"Las Colinas Orthopedic Surgery & Sports Medicine, PA",Texas,Healthcare Provider,76000,01/18/2019,Theft,Other Portable Electronic Device
+259,,ABB Inc. Active Employee Group Benefit Plan,North Carolina,Health Plan,6877,01/18/2019,Unauthorized Access/Disclosure,Paper/Films
+260,,Lebanon VA Medical Center,Pennsylvania,Healthcare Provider,1002,01/16/2019,Unauthorized Access/Disclosure,Email
+261,,Humana Inc.,Kentucky,Health Plan,598,01/15/2019,Hacking/IT Incident,Other
+262,,"Premier Specialties, Incorporated",Texas,Healthcare Provider,1300,01/14/2019,Unauthorized Access/Disclosure,Paper/Films
+263,,Sacred Heart Rehabilitation Center,Michigan,Healthcare Provider,2266,01/10/2019,Unauthorized Access/Disclosure,Email
+264,,Humana Inc,Kentucky,Health Plan,1211,01/09/2019,Unauthorized Access/Disclosure,Other
+265,,"Family Physicians of Winter Park, Inc.",Kentucky,Healthcare Provider,8429,01/08/2019,Hacking/IT Incident,Email
+266,,Dermacare Brickell,Florida,Healthcare Provider,1800,01/07/2019,Improper Disposal,Paper/Films
+267,,NORTH ATLANTA MEDICAL CLINIC,Georgia,Healthcare Provider,2800,01/06/2019,Hacking/IT Incident,Desktop Computer
+268,,Managed Health Services,Indiana,Health Plan,31300,01/03/2019,Hacking/IT Incident,Email
+269,,Managed Health Services,Indiana,Health Plan,576,01/03/2019,Unauthorized Access/Disclosure,Paper/Films
+270,,Centerstone Insurance and Financial Services (d/b/a BenefitMall),Texas,Business Associate,111589,01/03/2019,Hacking/IT Incident,Email
+271,,Humana Inc,Kentucky,Health Plan,684,12/31/2018,Theft,Paper/Films
+272,,Choice Rehabilitation,Missouri,Business Associate,4309,12/29/2018,Hacking/IT Incident,"Email, Laptop"
+273,,WEA Insurance Corporation,Wisconsin,Health Plan,850,12/27/2018,Hacking/IT Incident,Email
+274,,"SEIU Local 32BJ, District 36 Building Operators Welfare Trust Fund",Pennsylvania,Health Plan,911,12/21/2018,Unauthorized Access/Disclosure,Email
+275,,Kent County Community Mental Health Authority,Michigan,Healthcare Provider,2284,12/21/2018,Hacking/IT Incident,Email
+276,,JAND Inc. d/b/a Warby Parker,New York,Healthcare Provider,177890,12/20/2018,Hacking/IT Incident,Network Server
+277,,The Podiatric Offices of Bobby Yee,California,Healthcare Provider,24000,12/20/2018,Hacking/IT Incident,"Desktop Computer, Laptop, Other Portable Electronic Device"
+278,,Dermatologists of Southwest Ohio,Ohio,Healthcare Provider,733,12/20/2018,Improper Disposal,Paper/Films
+279,,"Virtual Radiologic Professionals, LLC",Minnesota,Healthcare Provider,2568,12/19/2018,Hacking/IT Incident,Other
+280,,Tift Regional Medical Center,Georgia,Healthcare Provider,1045,12/18/2018,Hacking/IT Incident,Email
+281,,Barnes-Jewish Hospital,Missouri,Healthcare Provider,1643,12/18/2018,Hacking/IT Incident,Network Server
+282,,University of Vermont Health Network - Elizabethtown Community Hospital,New York,Healthcare Provider,32470,12/17/2018,Hacking/IT Incident,Email
+283,,Fort Defiance Indian Hospital,Arizona,Healthcare Provider,1000,12/17/2018,Hacking/IT Incident,Desktop Computer
+284,,"Ben-Ora, Hansen & Vanesian Imaging, Ltd d/b/a Solis Mammography",Arizona,Healthcare Provider,500,12/16/2018,Theft,Desktop Computer
+285,,Massachusetts General Hospital,Massachusetts,Healthcare Provider,588,12/14/2018,Unauthorized Access/Disclosure,Paper/Films
+286,,Contra Costa Health Plan,California,Health Plan,862,12/13/2018,Unauthorized Access/Disclosure,"Electronic Medical Record, Email"
+287,,Smile Designs by Sandwick,Minnesota,Healthcare Provider,900,12/13/2018,Hacking/IT Incident,Other
+288,,"Alpha-Omega Endocrinology, Diabetes and Metabolism Center, PC",Arizona,Healthcare Provider,1000,12/12/2018,Unauthorized Access/Disclosure,"Desktop Computer, Electronic Medical Record, Email, Network Server, Other, Other Portable Electronic Device, Paper/Films"
+289,,Adams County,Wisconsin,Healthcare Provider,258120,12/11/2018,Unauthorized Access/Disclosure,"Network Server, Other"
+290,,County of Ramsey,Minnesota,Healthcare Provider,599,12/11/2018,Hacking/IT Incident,Email
+291,,Butler County Board of County Commissioners,Ohio,Health Plan,1912,12/04/2018,Unauthorized Access/Disclosure,Email
+292,,Georgia Department of Human Services,Georgia,Business Associate,435339,11/30/2018,Unauthorized Access/Disclosure,"Network Server, Other Portable Electronic Device"
+293,,"CHI Health Care, Inc.",Maryland,Healthcare Provider,722,11/30/2018,Unauthorized Access/Disclosure,"Other Portable Electronic Device, Paper/Films"
+294,,"Mind and Motion, LLC",Georgia,Healthcare Provider,16000,11/30/2018,Hacking/IT Incident,Network Server
+295,,CCRM Dallas-Fort Worth,Texas,Healthcare Provider,1117,11/30/2018,Hacking/IT Incident,Email
+296,,Thielen Student Health Center,Iowa,Healthcare Provider,599,11/30/2018,Unauthorized Access/Disclosure,Email
+297,,"Prairie Fields Family Medicine, PC",Nebraska,Healthcare Provider,6450,11/30/2018,Unauthorized Access/Disclosure,Email
+298,,"OrthoTexas Physicians and Surgeons, PLLC",Texas,Healthcare Provider,2172,11/28/2018,Unauthorized Access/Disclosure,Paper/Films
+299,,Steward Medical Group,Massachusetts,Healthcare Provider,16276,11/28/2018,Hacking/IT Incident,Network Server
+300,,Arizona Health Care Cost Containment System,Arizona,Health Plan,3146,03/11/2019,Unauthorized Access/Disclosure,Paper/Films
+301,,Emerson Hospital,Massachusetts,Healthcare Provider,6314,03/08/2019,Unauthorized Access/Disclosure,Other
+302,,Direct Scripts,Ohio,Healthcare Provider,9319,03/06/2019,Hacking/IT Incident,Network Server
+303,,Maffi Clinics,Arizona,Healthcare Provider,10465,03/06/2019,Hacking/IT Incident,Network Server
+304,,St. Francis Physician Services,South Carolina,Healthcare Provider,32178,03/04/2019,Hacking/IT Incident,Network Server
+305,,"RSC Insurance Brokerage, Inc.",Massachusetts,Business Associate,2088,03/01/2019,Theft,Laptop
+306,,"Arthritis & Rheumatism Associates, P.C.",Maryland,Healthcare Provider,500,03/01/2019,Hacking/IT Incident,Electronic Medical Record
+307,,Pasquotank-Camden Emergency Medical Service,North Carolina,Healthcare Provider,20420,02/28/2019,Hacking/IT Incident,Network Server
+308,,Rush University Medical Center,Illinois,Healthcare Provider,44924,02/28/2019,Unauthorized Access/Disclosure,Network Server
+309,,Humana Inc,Kentucky,Health Plan,1447,02/27/2019,Hacking/IT Incident,Network Server
+310,,West Virginia Public Employees Insurance Agency,West Virginia,Health Plan,1400,02/27/2019,Hacking/IT Incident,Network Server
+311,,Molina Healthcare,California,Health Plan,895,02/22/2019,Hacking/IT Incident,Network Server
+312,,"Delaware Guidance Services for Children and Youth, Inc.",Delaware,Healthcare Provider,50000,02/22/2019,Hacking/IT Incident,"Desktop Computer, Electronic Medical Record, Email, Laptop"
+313,,UConn Health,Connecticut,Healthcare Provider,326629,02/21/2019,Hacking/IT Incident,Email
+314,,Rocky Boy Health Center,Montana,Healthcare Provider,6000,02/21/2019,Theft,Other
+315,,"Rutland Hospital, Inc. d/b/a/ Rutland Regional Medical Center",Vermont,Healthcare Provider,72224,02/20/2019,Hacking/IT Incident,Email
+316,,UW Medicine,Washington,Healthcare Provider,973024,02/20/2019,Hacking/IT Incident,Network Server
+317,,Columbia Surgical Specialist of Spokane,Washington,Healthcare Provider,400000,02/18/2019,Hacking/IT Incident,Network Server
+318,,"OneDigital/Digital Insurance, LLC",Georgia,Business Associate,2763,02/15/2019,Theft,Laptop
+319,,California Physicians' Service d/b/a Blue Shield of California,California,Health Plan,18416,02/15/2019,Hacking/IT Incident,Network Server
+320,,Kids Central Inc.,Florida,Business Associate,3250,02/15/2019,Unauthorized Access/Disclosure,Email
+321,,Memorial Hospital at Gulfport,Mississippi,Healthcare Provider,30642,02/15/2019,Hacking/IT Incident,Email
+322,,Blue Cross Blue Shield of Massachusetts,Massachusetts,Health Plan,1262,02/15/2019,Hacking/IT Incident,Email
+323,,AltaMed Health Services Corporation,California,Healthcare Provider,6000,02/15/2019,Hacking/IT Incident,Network Server
+324,,Portsmouth Community Health Center,Virginia,Healthcare Provider,12000,02/14/2019,Hacking/IT Incident,Network Server
+325,,Rocky Mountain Health Care Services,Colorado,Healthcare Provider,971,02/11/2019,Hacking/IT Incident,Email
+326,,"Crawford Wellness Center, Inc",Texas,Healthcare Provider,1500,02/11/2019,Theft,Paper/Films
+327,,"Green Ridge Behavioral Health, LLC",Maryland,Healthcare Provider,14000,02/11/2019,Hacking/IT Incident,"Electronic Medical Record, Network Server"
+328,,"Kentucky Counseling Center, LLC",Kentucky,Healthcare Provider,16440,02/11/2019,Unauthorized Access/Disclosure,Electronic Medical Record
+329,,Rush University Medical Center,Illinois,Healthcare Provider,908,02/11/2019,Unauthorized Access/Disclosure,Paper/Films
+330,,"USR Holdings, LLC",Florida,Business Associate,2903,02/08/2019,Hacking/IT Incident,Network Server
+331,,AZ Plastic Surgery Center,Arizona,Healthcare Provider,5524,02/08/2019,Hacking/IT Incident,Network Server
+332,,AdventHealth Medical Group,Florida,Healthcare Provider,42161,02/05/2019,Hacking/IT Incident,Network Server
+333,,"United Hospital District, Inc.",Minnesota,Healthcare Provider,2143,02/04/2019,Hacking/IT Incident,Email
+334,,"Lakeland Care, Inc.",Wisconsin,Healthcare Provider,1300,02/04/2019,Hacking/IT Incident,Email
+335,,Rainbow Dental Care PLLC,Texas,Healthcare Provider,10000,02/04/2019,Hacking/IT Incident,Desktop Computer
+336,,Anesthesia Associates of Kansas City,Kansas,Healthcare Provider,3472,02/01/2019,Theft,Paper/Films
+337,,"Reproductive Medicine and Infertility Associates, P.A.",Minnesota,Healthcare Provider,40000,02/01/2019,Hacking/IT Incident,"Desktop Computer, Network Server"
+338,,CHI - Lakewood Health,Minnesota,Healthcare Provider,885,01/31/2019,Unauthorized Access/Disclosure,Email
+339,,CVS Pharmacy,Rhode Island,Healthcare Provider,5645,01/30/2019,Theft,Paper/Films
+340,,Aetna,Connecticut,Health Plan,2030,01/30/2019,Hacking/IT Incident,Email
+341,,"Cambridge Healthcare Services, LLC",California,Business Associate,10866,01/29/2019,Theft,Laptop
+342,,Roper St. Francis Healthcare,South Carolina,Healthcare Provider,35253,01/29/2019,Hacking/IT Incident,Email
+343,,"Lanier Family & Cosmetic Dentistry, P.C.",Georgia,Healthcare Provider,1950,01/29/2019,Unauthorized Access/Disclosure,Email
+344,,Pawnee County Memorial Hospital,Nebraska,Healthcare Provider,7038,01/28/2019,Hacking/IT Incident,Email
+345,,"Verity Health System of California, Inc.",California,Business Associate,2988,01/26/2019,Hacking/IT Incident,Email
+346,,"Dr. DeLuca Dr. Marciano & Associates, P.C.",Connecticut,Healthcare Provider,23578,01/25/2019,Hacking/IT Incident,"Desktop Computer, Electronic Medical Record, Network Server"
+347,,Valley Professionals Community Health Center,Indiana,Healthcare Provider,12029,01/25/2019,Hacking/IT Incident,Email
+348,,HealthFitness,Illinois,Business Associate,1808,01/25/2019,Unauthorized Access/Disclosure,Other
+349,,Sunflower State Health Plan,Kansas,Health Plan,1625,01/25/2019,Unauthorized Access/Disclosure,Other
+350,,"Unum Group, on behalf of its subsidiaries - Unum Life Insurance and Colonial Life & Accident Insurance",Tennessee,Health Plan,532,01/24/2019,Hacking/IT Incident,Email
+351,,EyeSouth Partners,Georgia,Business Associate,24113,01/23/2019,Hacking/IT Incident,Email
+352,,Stonehaven Dental,Texas,Healthcare Provider,6289,01/22/2019,Theft,Network Server
+353,,"Critical Care, Pulmonary and Sleep Associates, PLLP",Colorado,Healthcare Provider,23377,01/21/2019,Hacking/IT Incident,Email
+354,,Valley Hope Association,Kansas,Healthcare Provider,70799,01/18/2019,Hacking/IT Incident,Email
+355,,Tri-Cities Chaplaincy,Washington,Healthcare Provider,1086,01/18/2019,Hacking/IT Incident,Email
+356,,"FABEN Obstetrics and Gynecology, LLC",Florida,Healthcare Provider,6092,01/18/2019,Hacking/IT Incident,Network Server
+357,,"Integrity, Inc. d/b/a Integrity House",New Jersey,Healthcare Provider,7206,01/18/2019,Theft,"Desktop Computer, Laptop"
+358,,"Las Colinas Orthopedic Surgery & Sports Medicine, PA",Texas,Healthcare Provider,76000,01/18/2019,Theft,Other Portable Electronic Device
+359,,ABB Inc. Active Employee Group Benefit Plan,North Carolina,Health Plan,6877,01/18/2019,Unauthorized Access/Disclosure,Paper/Films
+360,,Lebanon VA Medical Center,Pennsylvania,Healthcare Provider,1002,01/16/2019,Unauthorized Access/Disclosure,Email
+361,,Humana Inc.,Kentucky,Health Plan,598,01/15/2019,Hacking/IT Incident,Other
+362,,"Premier Specialties, Incorporated",Texas,Healthcare Provider,1300,01/14/2019,Unauthorized Access/Disclosure,Paper/Films
+363,,Sacred Heart Rehabilitation Center,Michigan,Healthcare Provider,2266,01/10/2019,Unauthorized Access/Disclosure,Email
+364,,Humana Inc,Kentucky,Health Plan,1211,01/09/2019,Unauthorized Access/Disclosure,Other
+365,,"Family Physicians of Winter Park, Inc.",Kentucky,Healthcare Provider,8429,01/08/2019,Hacking/IT Incident,Email
+366,,Dermacare Brickell,Florida,Healthcare Provider,1800,01/07/2019,Improper Disposal,Paper/Films
+367,,NORTH ATLANTA MEDICAL CLINIC,Georgia,Healthcare Provider,2800,01/06/2019,Hacking/IT Incident,Desktop Computer
+368,,Managed Health Services,Indiana,Health Plan,31300,01/03/2019,Hacking/IT Incident,Email
+369,,Managed Health Services,Indiana,Health Plan,576,01/03/2019,Unauthorized Access/Disclosure,Paper/Films
+370,,Centerstone Insurance and Financial Services (d/b/a BenefitMall),Texas,Business Associate,111589,01/03/2019,Hacking/IT Incident,Email
+371,,Humana Inc,Kentucky,Health Plan,684,12/31/2018,Theft,Paper/Films
+372,,Choice Rehabilitation,Missouri,Business Associate,4309,12/29/2018,Hacking/IT Incident,"Email, Laptop"
+373,,WEA Insurance Corporation,Wisconsin,Health Plan,850,12/27/2018,Hacking/IT Incident,Email
+374,,"SEIU Local 32BJ, District 36 Building Operators Welfare Trust Fund",Pennsylvania,Health Plan,911,12/21/2018,Unauthorized Access/Disclosure,Email
+375,,Kent County Community Mental Health Authority,Michigan,Healthcare Provider,2284,12/21/2018,Hacking/IT Incident,Email
+376,,JAND Inc. d/b/a Warby Parker,New York,Healthcare Provider,177890,12/20/2018,Hacking/IT Incident,Network Server
+377,,The Podiatric Offices of Bobby Yee,California,Healthcare Provider,24000,12/20/2018,Hacking/IT Incident,"Desktop Computer, Laptop, Other Portable Electronic Device"
+378,,Dermatologists of Southwest Ohio,Ohio,Healthcare Provider,733,12/20/2018,Improper Disposal,Paper/Films
+379,,"Virtual Radiologic Professionals, LLC",Minnesota,Healthcare Provider,2568,12/19/2018,Hacking/IT Incident,Other
+380,,Tift Regional Medical Center,Georgia,Healthcare Provider,1045,12/18/2018,Hacking/IT Incident,Email
+381,,Barnes-Jewish Hospital,Missouri,Healthcare Provider,1643,12/18/2018,Hacking/IT Incident,Network Server
+382,,University of Vermont Health Network - Elizabethtown Community Hospital,New York,Healthcare Provider,32470,12/17/2018,Hacking/IT Incident,Email
+383,,Fort Defiance Indian Hospital,Arizona,Healthcare Provider,1000,12/17/2018,Hacking/IT Incident,Desktop Computer
+384,,"Ben-Ora, Hansen & Vanesian Imaging, Ltd d/b/a Solis Mammography",Arizona,Healthcare Provider,500,12/16/2018,Theft,Desktop Computer
+385,,Massachusetts General Hospital,Massachusetts,Healthcare Provider,588,12/14/2018,Unauthorized Access/Disclosure,Paper/Films
+386,,Contra Costa Health Plan,California,Health Plan,862,12/13/2018,Unauthorized Access/Disclosure,"Electronic Medical Record, Email"
+387,,Smile Designs by Sandwick,Minnesota,Healthcare Provider,900,12/13/2018,Hacking/IT Incident,Other
+388,,"Alpha-Omega Endocrinology, Diabetes and Metabolism Center, PC",Arizona,Healthcare Provider,1000,12/12/2018,Unauthorized Access/Disclosure,"Desktop Computer, Electronic Medical Record, Email, Network Server, Other, Other Portable Electronic Device, Paper/Films"
+389,,Adams County,Wisconsin,Healthcare Provider,258120,12/11/2018,Unauthorized Access/Disclosure,"Network Server, Other"
+390,,County of Ramsey,Minnesota,Healthcare Provider,599,12/11/2018,Hacking/IT Incident,Email
+391,,Butler County Board of County Commissioners,Ohio,Health Plan,1912,12/04/2018,Unauthorized Access/Disclosure,Email
+392,,Georgia Department of Human Services,Georgia,Business Associate,435339,11/30/2018,Unauthorized Access/Disclosure,"Network Server, Other Portable Electronic Device"
+393,,"CHI Health Care, Inc.",Maryland,Healthcare Provider,722,11/30/2018,Unauthorized Access/Disclosure,"Other Portable Electronic Device, Paper/Films"
+394,,"Mind and Motion, LLC",Georgia,Healthcare Provider,16000,11/30/2018,Hacking/IT Incident,Network Server
+395,,CCRM Dallas-Fort Worth,Texas,Healthcare Provider,1117,11/30/2018,Hacking/IT Incident,Email
+396,,Thielen Student Health Center,Iowa,Healthcare Provider,599,11/30/2018,Unauthorized Access/Disclosure,Email
+397,,"Prairie Fields Family Medicine, PC",Nebraska,Healthcare Provider,6450,11/30/2018,Unauthorized Access/Disclosure,Email
+398,,"OrthoTexas Physicians and Surgeons, PLLC",Texas,Healthcare Provider,2172,11/28/2018,Unauthorized Access/Disclosure,Paper/Films
+399,,Steward Medical Group,Massachusetts,Healthcare Provider,16276,11/28/2018,Hacking/IT Incident,Network Server
+400,,Arizona Health Care Cost Containment System,Arizona,Health Plan,3146,03/11/2019,Unauthorized Access/Disclosure,Paper/Films
+401,,Emerson Hospital,Massachusetts,Healthcare Provider,6314,03/08/2019,Unauthorized Access/Disclosure,Other
+402,,Direct Scripts,Ohio,Healthcare Provider,9319,03/06/2019,Hacking/IT Incident,Network Server
+403,,Maffi Clinics,Arizona,Healthcare Provider,10465,03/06/2019,Hacking/IT Incident,Network Server
+404,,St. Francis Physician Services,South Carolina,Healthcare Provider,32178,03/04/2019,Hacking/IT Incident,Network Server
+405,,"RSC Insurance Brokerage, Inc.",Massachusetts,Business Associate,2088,03/01/2019,Theft,Laptop
+406,,"Arthritis & Rheumatism Associates, P.C.",Maryland,Healthcare Provider,500,03/01/2019,Hacking/IT Incident,Electronic Medical Record
+407,,Pasquotank-Camden Emergency Medical Service,North Carolina,Healthcare Provider,20420,02/28/2019,Hacking/IT Incident,Network Server
+408,,Rush University Medical Center,Illinois,Healthcare Provider,44924,02/28/2019,Unauthorized Access/Disclosure,Network Server
+409,,Humana Inc,Kentucky,Health Plan,1447,02/27/2019,Hacking/IT Incident,Network Server
+410,,West Virginia Public Employees Insurance Agency,West Virginia,Health Plan,1400,02/27/2019,Hacking/IT Incident,Network Server
+411,,Molina Healthcare,California,Health Plan,895,02/22/2019,Hacking/IT Incident,Network Server
+412,,"Delaware Guidance Services for Children and Youth, Inc.",Delaware,Healthcare Provider,50000,02/22/2019,Hacking/IT Incident,"Desktop Computer, Electronic Medical Record, Email, Laptop"
+413,,UConn Health,Connecticut,Healthcare Provider,326629,02/21/2019,Hacking/IT Incident,Email
+414,,Rocky Boy Health Center,Montana,Healthcare Provider,6000,02/21/2019,Theft,Other
+415,,"Rutland Hospital, Inc. d/b/a/ Rutland Regional Medical Center",Vermont,Healthcare Provider,72224,02/20/2019,Hacking/IT Incident,Email
+416,,UW Medicine,Washington,Healthcare Provider,973024,02/20/2019,Hacking/IT Incident,Network Server
+417,,Columbia Surgical Specialist of Spokane,Washington,Healthcare Provider,400000,02/18/2019,Hacking/IT Incident,Network Server
+418,,"OneDigital/Digital Insurance, LLC",Georgia,Business Associate,2763,02/15/2019,Theft,Laptop
+419,,California Physicians' Service d/b/a Blue Shield of California,California,Health Plan,18416,02/15/2019,Hacking/IT Incident,Network Server
+420,,Kids Central Inc.,Florida,Business Associate,3250,02/15/2019,Unauthorized Access/Disclosure,Email
+421,,Memorial Hospital at Gulfport,Mississippi,Healthcare Provider,30642,02/15/2019,Hacking/IT Incident,Email
+422,,Blue Cross Blue Shield of Massachusetts,Massachusetts,Health Plan,1262,02/15/2019,Hacking/IT Incident,Email
+423,,AltaMed Health Services Corporation,California,Healthcare Provider,6000,02/15/2019,Hacking/IT Incident,Network Server
+424,,Portsmouth Community Health Center,Virginia,Healthcare Provider,12000,02/14/2019,Hacking/IT Incident,Network Server
+425,,Rocky Mountain Health Care Services,Colorado,Healthcare Provider,971,02/11/2019,Hacking/IT Incident,Email
+426,,"Crawford Wellness Center, Inc",Texas,Healthcare Provider,1500,02/11/2019,Theft,Paper/Films
+427,,"Green Ridge Behavioral Health, LLC",Maryland,Healthcare Provider,14000,02/11/2019,Hacking/IT Incident,"Electronic Medical Record, Network Server"
+428,,"Kentucky Counseling Center, LLC",Kentucky,Healthcare Provider,16440,02/11/2019,Unauthorized Access/Disclosure,Electronic Medical Record
+429,,Rush University Medical Center,Illinois,Healthcare Provider,908,02/11/2019,Unauthorized Access/Disclosure,Paper/Films
+430,,"USR Holdings, LLC",Florida,Business Associate,2903,02/08/2019,Hacking/IT Incident,Network Server
+431,,AZ Plastic Surgery Center,Arizona,Healthcare Provider,5524,02/08/2019,Hacking/IT Incident,Network Server
+432,,AdventHealth Medical Group,Florida,Healthcare Provider,42161,02/05/2019,Hacking/IT Incident,Network Server
+433,,"United Hospital District, Inc.",Minnesota,Healthcare Provider,2143,02/04/2019,Hacking/IT Incident,Email
+434,,"Lakeland Care, Inc.",Wisconsin,Healthcare Provider,1300,02/04/2019,Hacking/IT Incident,Email
+435,,Rainbow Dental Care PLLC,Texas,Healthcare Provider,10000,02/04/2019,Hacking/IT Incident,Desktop Computer
+436,,Anesthesia Associates of Kansas City,Kansas,Healthcare Provider,3472,02/01/2019,Theft,Paper/Films
+437,,"Reproductive Medicine and Infertility Associates, P.A.",Minnesota,Healthcare Provider,40000,02/01/2019,Hacking/IT Incident,"Desktop Computer, Network Server"
+438,,CHI - Lakewood Health,Minnesota,Healthcare Provider,885,01/31/2019,Unauthorized Access/Disclosure,Email
+439,,CVS Pharmacy,Rhode Island,Healthcare Provider,5645,01/30/2019,Theft,Paper/Films
+440,,Aetna,Connecticut,Health Plan,2030,01/30/2019,Hacking/IT Incident,Email
+441,,"Cambridge Healthcare Services, LLC",California,Business Associate,10866,01/29/2019,Theft,Laptop
+442,,Roper St. Francis Healthcare,South Carolina,Healthcare Provider,35253,01/29/2019,Hacking/IT Incident,Email
+443,,"Lanier Family & Cosmetic Dentistry, P.C.",Georgia,Healthcare Provider,1950,01/29/2019,Unauthorized Access/Disclosure,Email
+444,,Pawnee County Memorial Hospital,Nebraska,Healthcare Provider,7038,01/28/2019,Hacking/IT Incident,Email
+445,,"Verity Health System of California, Inc.",California,Business Associate,2988,01/26/2019,Hacking/IT Incident,Email
+446,,"Dr. DeLuca Dr. Marciano & Associates, P.C.",Connecticut,Healthcare Provider,23578,01/25/2019,Hacking/IT Incident,"Desktop Computer, Electronic Medical Record, Network Server"
+447,,Valley Professionals Community Health Center,Indiana,Healthcare Provider,12029,01/25/2019,Hacking/IT Incident,Email
+448,,HealthFitness,Illinois,Business Associate,1808,01/25/2019,Unauthorized Access/Disclosure,Other
+449,,Sunflower State Health Plan,Kansas,Health Plan,1625,01/25/2019,Unauthorized Access/Disclosure,Other
+450,,"Unum Group, on behalf of its subsidiaries - Unum Life Insurance and Colonial Life & Accident Insurance",Tennessee,Health Plan,532,01/24/2019,Hacking/IT Incident,Email
+451,,EyeSouth Partners,Georgia,Business Associate,24113,01/23/2019,Hacking/IT Incident,Email
+452,,Stonehaven Dental,Texas,Healthcare Provider,6289,01/22/2019,Theft,Network Server
+453,,"Critical Care, Pulmonary and Sleep Associates, PLLP",Colorado,Healthcare Provider,23377,01/21/2019,Hacking/IT Incident,Email
+454,,Valley Hope Association,Kansas,Healthcare Provider,70799,01/18/2019,Hacking/IT Incident,Email
+455,,Tri-Cities Chaplaincy,Washington,Healthcare Provider,1086,01/18/2019,Hacking/IT Incident,Email
+456,,"FABEN Obstetrics and Gynecology, LLC",Florida,Healthcare Provider,6092,01/18/2019,Hacking/IT Incident,Network Server
+457,,"Integrity, Inc. d/b/a Integrity House",New Jersey,Healthcare Provider,7206,01/18/2019,Theft,"Desktop Computer, Laptop"
+458,,"Las Colinas Orthopedic Surgery & Sports Medicine, PA",Texas,Healthcare Provider,76000,01/18/2019,Theft,Other Portable Electronic Device
+459,,ABB Inc. Active Employee Group Benefit Plan,North Carolina,Health Plan,6877,01/18/2019,Unauthorized Access/Disclosure,Paper/Films
+460,,Lebanon VA Medical Center,Pennsylvania,Healthcare Provider,1002,01/16/2019,Unauthorized Access/Disclosure,Email
+461,,Humana Inc.,Kentucky,Health Plan,598,01/15/2019,Hacking/IT Incident,Other
+462,,"Premier Specialties, Incorporated",Texas,Healthcare Provider,1300,01/14/2019,Unauthorized Access/Disclosure,Paper/Films
+463,,Sacred Heart Rehabilitation Center,Michigan,Healthcare Provider,2266,01/10/2019,Unauthorized Access/Disclosure,Email
+464,,Humana Inc,Kentucky,Health Plan,1211,01/09/2019,Unauthorized Access/Disclosure,Other
+465,,"Family Physicians of Winter Park, Inc.",Kentucky,Healthcare Provider,8429,01/08/2019,Hacking/IT Incident,Email
+466,,Dermacare Brickell,Florida,Healthcare Provider,1800,01/07/2019,Improper Disposal,Paper/Films
+467,,NORTH ATLANTA MEDICAL CLINIC,Georgia,Healthcare Provider,2800,01/06/2019,Hacking/IT Incident,Desktop Computer
+468,,Managed Health Services,Indiana,Health Plan,31300,01/03/2019,Hacking/IT Incident,Email
+469,,Managed Health Services,Indiana,Health Plan,576,01/03/2019,Unauthorized Access/Disclosure,Paper/Films
+470,,Centerstone Insurance and Financial Services (d/b/a BenefitMall),Texas,Business Associate,111589,01/03/2019,Hacking/IT Incident,Email
+471,,Humana Inc,Kentucky,Health Plan,684,12/31/2018,Theft,Paper/Films
+472,,Choice Rehabilitation,Missouri,Business Associate,4309,12/29/2018,Hacking/IT Incident,"Email, Laptop"
+473,,WEA Insurance Corporation,Wisconsin,Health Plan,850,12/27/2018,Hacking/IT Incident,Email
+474,,"SEIU Local 32BJ, District 36 Building Operators Welfare Trust Fund",Pennsylvania,Health Plan,911,12/21/2018,Unauthorized Access/Disclosure,Email
+475,,Kent County Community Mental Health Authority,Michigan,Healthcare Provider,2284,12/21/2018,Hacking/IT Incident,Email
+476,,JAND Inc. d/b/a Warby Parker,New York,Healthcare Provider,177890,12/20/2018,Hacking/IT Incident,Network Server
+477,,The Podiatric Offices of Bobby Yee,California,Healthcare Provider,24000,12/20/2018,Hacking/IT Incident,"Desktop Computer, Laptop, Other Portable Electronic Device"
+478,,Dermatologists of Southwest Ohio,Ohio,Healthcare Provider,733,12/20/2018,Improper Disposal,Paper/Films
+479,,"Virtual Radiologic Professionals, LLC",Minnesota,Healthcare Provider,2568,12/19/2018,Hacking/IT Incident,Other
+480,,Tift Regional Medical Center,Georgia,Healthcare Provider,1045,12/18/2018,Hacking/IT Incident,Email
+481,,Barnes-Jewish Hospital,Missouri,Healthcare Provider,1643,12/18/2018,Hacking/IT Incident,Network Server
+482,,University of Vermont Health Network - Elizabethtown Community Hospital,New York,Healthcare Provider,32470,12/17/2018,Hacking/IT Incident,Email
+483,,Fort Defiance Indian Hospital,Arizona,Healthcare Provider,1000,12/17/2018,Hacking/IT Incident,Desktop Computer
+484,,"Ben-Ora, Hansen & Vanesian Imaging, Ltd d/b/a Solis Mammography",Arizona,Healthcare Provider,500,12/16/2018,Theft,Desktop Computer
+485,,Massachusetts General Hospital,Massachusetts,Healthcare Provider,588,12/14/2018,Unauthorized Access/Disclosure,Paper/Films
+486,,Contra Costa Health Plan,California,Health Plan,862,12/13/2018,Unauthorized Access/Disclosure,"Electronic Medical Record, Email"
+487,,Smile Designs by Sandwick,Minnesota,Healthcare Provider,900,12/13/2018,Hacking/IT Incident,Other
+488,,"Alpha-Omega Endocrinology, Diabetes and Metabolism Center, PC",Arizona,Healthcare Provider,1000,12/12/2018,Unauthorized Access/Disclosure,"Desktop Computer, Electronic Medical Record, Email, Network Server, Other, Other Portable Electronic Device, Paper/Films"
+489,,Adams County,Wisconsin,Healthcare Provider,258120,12/11/2018,Unauthorized Access/Disclosure,"Network Server, Other"
+490,,County of Ramsey,Minnesota,Healthcare Provider,599,12/11/2018,Hacking/IT Incident,Email
+491,,Butler County Board of County Commissioners,Ohio,Health Plan,1912,12/04/2018,Unauthorized Access/Disclosure,Email
+492,,Georgia Department of Human Services,Georgia,Business Associate,435339,11/30/2018,Unauthorized Access/Disclosure,"Network Server, Other Portable Electronic Device"
+493,,"CHI Health Care, Inc.",Maryland,Healthcare Provider,722,11/30/2018,Unauthorized Access/Disclosure,"Other Portable Electronic Device, Paper/Films"
+494,,"Mind and Motion, LLC",Georgia,Healthcare Provider,16000,11/30/2018,Hacking/IT Incident,Network Server
+495,,CCRM Dallas-Fort Worth,Texas,Healthcare Provider,1117,11/30/2018,Hacking/IT Incident,Email
+496,,Thielen Student Health Center,Iowa,Healthcare Provider,599,11/30/2018,Unauthorized Access/Disclosure,Email
+497,,"Prairie Fields Family Medicine, PC",Nebraska,Healthcare Provider,6450,11/30/2018,Unauthorized Access/Disclosure,Email
+498,,"OrthoTexas Physicians and Surgeons, PLLC",Texas,Healthcare Provider,2172,11/28/2018,Unauthorized Access/Disclosure,Paper/Films
+499,,Steward Medical Group,Massachusetts,Healthcare Provider,16276,11/28/2018,Hacking/IT Incident,Network Server
