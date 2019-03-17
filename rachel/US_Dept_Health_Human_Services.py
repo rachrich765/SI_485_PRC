@@ -38,6 +38,7 @@ for i in range(buttons):
 	y = driver.page_source
 	tables = pd.read_html(y, header=0)
 	data_USDHHSOCR = tables[1]
+	tables1.append(data_USDHHSOCR)
 
 	usdh = usdh.append(data_USDHHSOCR, ignore_index = True)
 driver.quit()
