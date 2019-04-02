@@ -23,7 +23,7 @@ for p in all_p:
 		#only get links for A-Z
 		for x in letter_links_a:
 			letter_links.append(x['href'])
-print(letter_links)
+# print(letter_links)
 NH_dict = dict()
 links = list()
 for x in letter_links:
@@ -41,15 +41,15 @@ NH_dict = dict()
 text = ""
 links_len = len(links)
 
-for l in links:
-	response = requests.get(l)
-	my_raw_data = response.content
-	with open("new_pdf.pdf", 'wb') as my_data:
-		my_data.write(my_raw_data)
-		my_data.close()
-	file = textract.process('new_pdf.pdf', method='pdfminer')
-	NH_dict[l] = file
-	os.remove("new_pdf.pdf")
+# for l in links:
+# 	response = requests.get(l)
+# 	my_raw_data = response.content
+# 	with open("new_pdf.pdf", 'wb') as my_data:
+# 		my_data.write(my_raw_data)
+# 		my_data.close()
+# 	file = textract.process('new_pdf.pdf', method='pdfminer')
+# 	NH_dict[l] = file
+# 	os.remove("new_pdf.pdf")
 
 
 end_time = time.time()
