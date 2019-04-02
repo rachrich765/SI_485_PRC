@@ -21,9 +21,9 @@ for p in all_p:
 	letter_links_a = (p.find_all('a', href=True))
 	if letter_links_a:
 		#only get links for A-Z
-		for x in letter_links_a[:-1]:
+		for x in letter_links_a:
 			letter_links.append(x['href'])
-
+print(letter_links)
 NH_dict = dict()
 links = list()
 for x in letter_links:
