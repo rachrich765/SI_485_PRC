@@ -101,9 +101,9 @@ def get_breach_type_classifier(large_df, l_vecs = l_vecs, l_nb = l_nb_loaded):
                'e-mail', 'emails', 'e-mails', 'phish', 'attack', 'without', 'cyberattack', 'fraudster', 'discovered',
                'system', 'systems', 'third-party', 'third', 'party', 'hacking'
               ]
-    words_for_2 = ['contractor', "inside", 'insider', 'former']
+    words_for_2 = ['contractor', 'insider', 'former']
     words_for_3 = ['papers', 'paper', 'letter']
-    words_for_4 = ["laptop", "phone", 'hard', 'drive', 'laptops', 'car', 'cars', 'theft']
+    words_for_4 = ["laptop", "phone", 'hard', 'drive', 'laptops', 'car', 'cars']
     words_for_5 = ["computer", "server"]
     words_for_6 = ["inadvertently", 'mistake', 'accident', 'mistakenly', 'mistaken', 'accidentally']
 
@@ -114,8 +114,8 @@ def get_breach_type_classifier(large_df, l_vecs = l_vecs, l_nb = l_nb_loaded):
         if pdf == "no_pdf":
             causes_sorted_2.append("UND")
         else:
-            c = clean_pdf_text(pdf)  
-            c = c.split()
+            p = clean_pdf_text(pdf)  
+            c = p.split()
             a = Counter(c)
 #             print(a)
             features = []  
@@ -143,25 +143,31 @@ def get_breach_type_classifier(large_df, l_vecs = l_vecs, l_nb = l_nb_loaded):
             if prediction == 0:
                 causes_sorted_2.append(1)
             else:
-#                 a = [x for x in c if x in words_for_1]
-                b = [x for x in c if x in words_for_2]
-                c = [x for x in c if x in words_for_3]
-                d = [x for x in c if x in words_for_4]
-                e = [x for x in c if x in words_for_5]
-                f = [x for x in c if x in words_for_6]
-                tup = (len(b),len(c),len(d),len(e),len(f))
+                p = p.split(' ')
+                words_for_1 = ['unauthorized', 'fraud', 'attack', 'malicious', 'compromise', 'suspicious', 
+                               'malware', 'ransomware', 
+               'cyber', 'authorization', 'phishing', 'cybersecurity', 'infected', 'compromised',
+               'virus', 'compromise', 'attacked', 'hacked', 'spoofing', 'scam', 'scammer', 'network', 'fraudulent', 
+                'phish', 'attack', 'cyberattack', 
+                'fraudster', 'third-party', 'hacking'
+              ]
+
+                b = [x for x in p if x in words_for_2]
+                d = [x for x in p if x in words_for_4]
+                print(d)
+                e = [x for x in p if x in words_for_5]
+                f = [x for x in p if x in words_for_6]
+                tup = (len(b),len(d),len(e),len(f))
+                opt = [2,4,5,6]
                 if len(f)!= 0:
                     causes_sorted_2.append(6)
-                elif len(d)!= 0:
-                    causes_sorted_2.append(4)
-                elif max(tup) != 0:
-                    causes_sorted_2.append(tup.index(max(tup))+1)
+                if max(tup) != 0:
+                    causes_sorted_2.append(opt[tup.index(max(tup))])
                 elif max(tup) == 0: 
                     causes_sorted_2.append(7)
                     
             
     return causes_sorted_2
-
 
 # In[330]:
 
