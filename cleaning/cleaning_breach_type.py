@@ -114,6 +114,9 @@ def get_breach_type_classifier(large_df, l_vecs = l_vecs, l_nb = l_nb_loaded):
         else:
             p = clean_pdf_text(pdf)  
             c = p.split()
+            if len(c)<=66:
+                causes_sorted_2.append(7)
+                continue
             a = Counter(c)
 #             print(a)
             features = []  
