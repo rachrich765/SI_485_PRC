@@ -91,8 +91,6 @@ def clean_pdf_text(pdf_text):
     return no_st
 
 
-# In[319]:
-
 def get_breach_type_classifier(large_df, l_vecs = l_vecs, l_nb = l_nb_loaded):
     causes_sorted_2 = []
     words_for_1 = ['unauthorized', 'fraud', 'attack', 'malicious', 'compromise', 'suspicious', 'malware', 'ransomware', 
@@ -101,10 +99,10 @@ def get_breach_type_classifier(large_df, l_vecs = l_vecs, l_nb = l_nb_loaded):
                'e-mail', 'emails', 'e-mails', 'phish', 'attack', 'without', 'cyberattack', 'fraudster', 'discovered',
                'system', 'systems', 'third-party', 'third', 'party', 'hacking'
               ]
-    words_for_2 = ['contractor', 'insider', 'former']
+    words_for_2 = ['contractor', 'insider', 'former', 'employee']
     words_for_3 = ['papers', 'paper', 'letter']
     words_for_4 = ["laptop", "phone", 'hard', 'drive', 'laptops', 'car', 'cars', 'stolen']
-    words_for_5 = ["computer", "server", 'stolen', 'theft']
+    words_for_5 = ["computer", "server"]
     words_for_6 = ["inadvertently", 'mistake', 'accident', 'mistakenly', 'mistaken', 'accidentally']
 
     others = words_for_2 + words_for_3 + words_for_4 + words_for_5 + words_for_6 
@@ -143,6 +141,7 @@ def get_breach_type_classifier(large_df, l_vecs = l_vecs, l_nb = l_nb_loaded):
             if prediction == 0:
                 causes_sorted_2.append(1)
             else:
+                pdf = p
                 p = p.split(' ')
                 words_for_1 = ['unauthorized', 'fraud', 'attack', 'malicious', 'compromise', 'suspicious', 
                                'malware', 'ransomware', 
@@ -152,21 +151,31 @@ def get_breach_type_classifier(large_df, l_vecs = l_vecs, l_nb = l_nb_loaded):
                 'fraudster', 'third-party', 'hacking'
               ]
                 a = [x for x in c if x in words_for_1]
-
+#                 print(a)
                 b = [x for x in p if x in words_for_2]
-#                 c = [x for x in p if x in words_for_3]
+#                 print(b)
+                c = [x for x in p if x in words_for_3]
                 d = [x for x in p if x in words_for_4]
 
                 e = [x for x in p if x in words_for_5]
                 f = [x for x in p if x in words_for_6]
-
-                tup = (len(a),len(b),len(d),len(e),len(f))
-                opt = [1,2,4,5,6]
+#                 print(b)
+                tup = (len(a),len(b),len(d),len(f))
+                opt = [1,2,4,6]
                 if len(f)!= 0:
                     causes_sorted_2.append(6)
-                elif 'stolen' in d or 'car' in d:
+                elif 'car' in d:
                     causes_sorted_2.append(4)
-                elif 'stolen' in e or 'theft' in e:
+                elif 'contractor' in pdf:
+                    causes_sorted_2.append(2) 
+                elif 'paper' in c:
+                    causes_sorted_2.append(3)
+#                 elif 'stolen' in e or 'theft' in e:
+#                     causes_sorted_2.append(5)
+#                 elif 'former employee' in pdf:
+#                     print(pdf)
+#                     causes_sorted_2.append(2)
+                elif 'stolen' in pdf and 'computer' in e or 'server' in e:
                     causes_sorted_2.append(5)
                 elif max(tup) != 0:
                     causes_sorted_2.append(opt[tup.index(max(tup))])
@@ -191,10 +200,9 @@ def final_list(l1, l2):
             m = l2[i]
             if type(m) == int:
                 final.append(item)
-            else:
+            elif m == "UND":
                 final.append(7)
     return final 
-
 
 # In[ ]:
 
