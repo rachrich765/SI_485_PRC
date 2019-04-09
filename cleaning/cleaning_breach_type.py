@@ -152,14 +152,14 @@ def get_breach_type_classifier(large_df, l_vecs = l_vecs, l_nb = l_nb_loaded):
                 'fraudster', 'third-party', 'hacking'
               ]
                 a = [x for x in c if x in words_for_1]
-                print(a)
+
                 b = [x for x in p if x in words_for_2]
 #                 c = [x for x in p if x in words_for_3]
                 d = [x for x in p if x in words_for_4]
-                print(d)
+
                 e = [x for x in p if x in words_for_5]
                 f = [x for x in p if x in words_for_6]
-#                 print(b)
+
                 tup = (len(a),len(b),len(d),len(e),len(f))
                 opt = [1,2,4,5,6]
                 if len(f)!= 0:
