@@ -1,5 +1,7 @@
 #input: finished csv file
 #output: csv file with entity duplicates reduced
+import string
+import re
 
 def clean_ents(csv_file):
     df_master = pd.read_csv(csv_file)
@@ -41,5 +43,7 @@ def clean_ents(csv_file):
         ent = re.sub("[\s]","",entity) #remove spaces
         ent = re.sub("[^A-z0-9]","",entity) #remove punctuation
         clean_ents.append(final_dict[ent])
+    clean_ents = [string.capwords(i) for i in clean_ents]
     df_master["Name of Entity"] = clean_ents
+    
     return df_master
